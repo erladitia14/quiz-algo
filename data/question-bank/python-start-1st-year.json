@@ -1,0 +1,375 @@
+{
+  "course": "python-start-1st-year",
+  "questions": [
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Introduction to the Python language",
+      "difficulty": "easy",
+      "question": "Apa fungsi utama dari perintah print() dalam Python?",
+      "options": [
+        "Menampilkan output ke layar",
+        "Membaca input dari pengguna",
+        "Menghapus variabel dari memori",
+        "Menghentikan program"
+      ],
+      "correct_index": 0,
+      "explanation": "print() digunakan untuk menampilkan teks atau nilai ke layar (console)."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Introduction to the Python language",
+      "difficulty": "easy",
+      "question": "Perintah mana yang digunakan untuk meminta input dari pengguna?",
+      "options": ["print()", "input()", "read()", "get()"],
+      "correct_index": 1,
+      "explanation": "input() membaca data yang diketik pengguna dan mengembalikannya sebagai string."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Variables",
+      "difficulty": "easy",
+      "question": "Apa tipe data hasil dari fungsi input()?",
+      "options": ["int (bilangan bulat)", "str (string)", "float (bilangan desimal)", "bool (boolean)"],
+      "correct_index": 1,
+      "explanation": "input() selalu mengembalikan string, sehingga perlu dikonversi (misal int()) jika ingin dihitung."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Variables",
+      "difficulty": "medium",
+      "question": "Pada materi 'Travel agency calculator', kita menghitung total biaya wisata. Jika harga tiket 100 dan jumlah wisatawan 18, bagaimana cara menghitung totalnya di Python?",
+      "options": [
+        "total = harga + jumlah",
+        "total = harga * jumlah",
+        "total = harga / jumlah",
+        "total = harga - jumlah"
+      ],
+      "correct_index": 1,
+      "explanation": "Total biaya = harga tiket dikali jumlah wisatawan: harga * jumlah."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Strings",
+      "difficulty": "medium",
+      "question": "Apa hasil dari operasi \"5\" + \"3\" di Python?",
+      "options": ["8", "\"53\"", "Error", "15"],
+      "correct_index": 1,
+      "explanation": "Operator + pada string melakukan penggabungan (concatenation), jadi \"5\" + \"3\" = \"53\"."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Strings",
+      "difficulty": "easy",
+      "question": "Fungsi yang digunakan untuk mengubah string menjadi bilangan bulat adalah...",
+      "options": ["str()", "int()", "float()", "num()"],
+      "correct_index": 1,
+      "explanation": "int() mengonversi nilai (misal string \"18\") menjadi bilangan bulat 18."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Nested constructions",
+      "difficulty": "medium",
+      "question": "Pada materi 'Concise code', kita menghitung total berat bagasi tur operator. Konstruksi bersarang (nested) yang tepat untuk input + konversi adalah...",
+      "options": [
+        "mass1 = int(input('Weight of the bag'))",
+        "mass1 = input(int('Weight of the bag'))",
+        "mass1 = print(input('Weight of the bag'))",
+        "mass1 = input(print('Weight of the bag'))"
+      ],
+      "correct_index": 0,
+      "explanation": "input() dibaca dulu sebagai string, lalu dibungkus int() agar menjadi bilangan: int(input(...))."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Conditional statements",
+      "difficulty": "easy",
+      "question": "Kata kunci Python untuk percabangan (pengambilan keputusan) adalah...",
+      "options": ["if / else", "check / pass", "case / break", "when / then"],
+      "correct_index": 0,
+      "explanation": "Python menggunakan if, elif, dan else untuk percabangan, seperti pada proyek 'Smart recommendations'."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Conditional statements",
+      "difficulty": "medium",
+      "question": "Pada proyek Sweet Stories, jika preferensi pelanggan adalah 'candy' maka rekomendasi 'lollipops' ditampilkan. Struktur yang paling tepat adalah...",
+      "options": [
+        "if preference == 'candy': print('lollipops')",
+        "if preference = 'candy': print('lollipops')",
+        "while preference == 'candy': print('lollipops')",
+        "for preference == 'candy': print('lollipops')"
+      ],
+      "correct_index": 0,
+      "explanation": "Perbandingan memakai == dan percabangan memakai if; = adalah operator penugasan."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Nested conditional statements",
+      "difficulty": "medium",
+      "question": "Pada materi 'Multilevel smart recommendations' (toko Longevity), program memilih produk berdasarkan kategori lalu preferensi. Struktur yang dipakai adalah...",
+      "options": [
+        "if bersarang (if di dalam if)",
+        "satu print saja",
+        "perulangan tanpa kondisi",
+        "fungsi tanpa parameter"
+      ],
+      "correct_index": 0,
+      "explanation": "Rekomendasi bertingkat membutuhkan if di dalam if (nested conditional) untuk kategori lalu preferensi."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Loops",
+      "difficulty": "medium",
+      "question": "Pada materi promo code, program meminta input berulang sampai kode 'summer' benar. Perulangan yang tepat adalah...",
+      "options": [
+        "while loop",
+        "if tunggal",
+        "print berulang manual",
+        "import"
+      ],
+      "correct_index": 0,
+      "explanation": "while cocok untuk mengulang sampai syarat terpenuhi: ulangi input sampai kode benar."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Loops. Continuation",
+      "difficulty": "medium",
+      "question": "Pada materi registrasi 'Friend Around', program mengecek karakter terlarang pada login satu per satu. Pendekatan yang digunakan adalah...",
+      "options": [
+        "Perulangan yang memeriksa tiap karakter",
+        "Satu if tanpa loop",
+        "Menghapus semua input",
+        "print tanpa analisis"
+      ],
+      "correct_index": 0,
+      "explanation": "Untuk memeriksa setiap karakter login, kita gunakan loop yang menelusuri string karakter demi karakter."
+    },
+    {
+      "module_ref": "Modul 3",
+      "lesson_ref": "Functions",
+      "difficulty": "easy",
+      "question": "Kata kunci untuk mendefinisikan fungsi di Python adalah...",
+      "options": ["def", "func", "function", "define"],
+      "correct_index": 0,
+      "explanation": "Fungsi dibuat dengan kata kunci def, misalnya def print_label():."
+    },
+    {
+      "module_ref": "Modul 3",
+      "lesson_ref": "Functions",
+      "difficulty": "medium",
+      "question": "Pada materi 'Success Educational Center', kita membuat program pencetak label notebook berulang kali. Kenapa fungsi berguna di sini?",
+      "options": [
+        "Kode label cukup ditulis sekali dan dipanggil berulang",
+        "Fungsi membuat program lebih lambat",
+        "Fungsi menghapus data pengguna",
+        "Fungsi hanya bisa dijalankan sekali"
+      ],
+      "correct_index": 0,
+      "explanation": "Fungsi menghindari pengulangan kode: tulis sekali, panggil sebanyak jumlah label yang diminta."
+    },
+    {
+      "module_ref": "Modul 3",
+      "lesson_ref": "Functions. Continuation",
+      "difficulty": "medium",
+      "question": "Pada materi nilai rata-rata siswa (diskon planetarium), fungsi yang menghitung rata-rata sebaiknya...",
+      "options": [
+        "Menerima parameter nilai dan mengembalikan (return) hasilnya",
+        "Tidak menerima parameter sama sekali",
+        "Selalu menampilkan 'diskon' tanpa menghitung",
+        "Menghapus variabel global"
+      ],
+      "correct_index": 0,
+      "explanation": "Fungsi fleksibel menerima input (parameter) dan mengembalikan hasil (return) agar bisa dipakai ulang."
+    },
+    {
+      "module_ref": "Modul 3",
+      "lesson_ref": "The random and time modules",
+      "difficulty": "medium",
+      "question": "Pada materi undian tim water polo 'Go Ahead!', modul yang dipakai untuk menghasilkan pasangan tim acak adalah...",
+      "options": ["random", "time", "math", "os"],
+      "correct_index": 0,
+      "explanation": "Modul random (misal random.randint) menghasilkan angka acak untuk undian."
+    },
+    {
+      "module_ref": "Modul 3",
+      "lesson_ref": "The random and time modules",
+      "difficulty": "easy",
+      "question": "Fungsi time.sleep(2) akan...",
+      "options": [
+        "Menunda program selama 2 detik",
+        "Menghentikan program selamanya",
+        "Mencetak angka 2",
+        "Menghapus semua variabel"
+      ],
+      "correct_index": 0,
+      "explanation": "time.sleep() menunda eksekusi program selama jumlah detik yang diberikan — dipakai untuk timekeeping di materi Go Ahead!."
+    },
+    {
+      "module_ref": "Modul 3",
+      "lesson_ref": "Creating modules",
+      "difficulty": "medium",
+      "question": "Pada proyek 'Answer-back program', kode dipecah ke beberapa file agar rapi. Kata kunci untuk memakai kode dari file lain adalah...",
+      "options": ["import", "include", "require", "using"],
+      "correct_index": 0,
+      "explanation": "import digunakan untuk memakai fungsi/variabel dari modul (file) lain."
+    },
+    {
+      "module_ref": "Modul 4",
+      "lesson_ref": "Turtle. Linear algorithms",
+      "difficulty": "easy",
+      "question": "Pada materi Turtle 'Your Comfort design studio', perintah untuk menggerakkan kura-kura maju 100 piksel adalah...",
+      "options": [
+        "turtle.forward(100)",
+        "turtle.jump(100)",
+        "turtle.move_up(100)",
+        "turtle.speed(100)"
+      ],
+      "correct_index": 0,
+      "explanation": "forward(n) menggerakkan turtle ke arah hadapnya sejauh n piksel."
+    },
+    {
+      "module_ref": "Modul 4",
+      "lesson_ref": "Turtle. Loops",
+      "difficulty": "medium",
+      "question": "Pada materi bintang Cosmonautics Day, menggambar bintang dengan loop jauh lebih singkat karena...",
+      "options": [
+        "Gerakan yang sama diulang otomatis",
+        "Loop menghapus warna gambar",
+        "Loop menggambar tanpa koordinat",
+        "Loop mengganti layar turtle"
+      ],
+      "correct_index": 0,
+      "explanation": "Pola bintang terdiri dari gerakan berulang (maju + belok), jadi loop membuatnya ringkas."
+    },
+    {
+      "module_ref": "Modul 4",
+      "lesson_ref": "Turtle. Conditional statements",
+      "difficulty": "medium",
+      "question": "Pada materi papan peringatan polisi, batas kecepatan kota 60 km/jam. Jika input kecepatan 75, program seharusnya...",
+      "options": [
+        "Menampilkan peringatan melebihi batas",
+        "Menampilkan 'kecepatan aman'",
+        "Keluar tanpa pesan",
+        "Meminta input ulang selamanya"
+      ],
+      "correct_index": 0,
+      "explanation": "75 > 60, sehingga kondisi if kecepatan > 60 terpenuhi dan peringatan ditampilkan."
+    },
+    {
+      "module_ref": "Modul 4",
+      "lesson_ref": "The 'Urban Environment' project",
+      "difficulty": "medium",
+      "question": "Pada proyek 'Urban Environment', kita membuat modul 'city' yang berisi fungsi-fungsi gambar objek kota. Tujuan utamanya adalah...",
+      "options": [
+        "Fungsi gambar bisa dipakai ulang untuk menyusun pemandangan",
+        "Menghapus semua objek kota",
+        "Mengganti turtle dengan pygame",
+        "Menyimpan kota ke database"
+      ],
+      "correct_index": 0,
+      "explanation": "Modul berisi fungsi objek kota (min. 3) agar mudah dipakai ulang saat menggambar landscape."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "OOP. Objects and Methods",
+      "difficulty": "medium",
+      "question": "Pada materi 'Turtle Races' (studio Press and Play), dua turtle memiliki kecepatan acak masing-masing. Konsep OOP yang terlihat adalah...",
+      "options": [
+        "Objek punya properti (warna, kecepatan) dan metode (bergerak)",
+        "Semua turtle berbagi satu variabel kecepatan",
+        "Turtle tidak bisa dibuat lebih dari satu",
+        "Kecepatan tidak bisa diacak"
+      ],
+      "correct_index": 0,
+      "explanation": "Setiap objek turtle punya atribut sendiri (warna/kecepatan) dan metode (movement) — dasar OOP."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "OOP. Events",
+      "difficulty": "medium",
+      "question": "Pada game 'Catch the Turtle', pemain harus mengklik turtle 3 kali. Mekanisme klik mouse ditangani dengan...",
+      "options": [
+        "Event handler (misal onclick)",
+        "print()",
+        "import time",
+        "break saja"
+      ],
+      "correct_index": 0,
+      "explanation": "Interaksi klik adalah event; kita pasang handler seperti turtle.onclick() untuk meresponsnya."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "OOP. Classes",
+      "difficulty": "easy",
+      "question": "Kata kunci untuk membuat kelas (blueprint objek) di Python adalah...",
+      "options": ["class", "object", "new", "create"],
+      "correct_index": 0,
+      "explanation": "Kelas dibuat dengan class, misalnya class Hero: — dipakai saat membuat karakter game di materi OOP."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "OOP. Inheritance",
+      "difficulty": "medium",
+      "question": "Pada materi pembuatan karakter game, kelas Knight, Rascal, dan Dragon dibuat dari kelas dasar Hero. Konsep ini disebut...",
+      "options": [
+        "Inheritance (pewarisan)",
+        "Pengulangan (loop)",
+        "Pengkondisian (conditional)",
+        "Penghapusan objek"
+      ],
+      "correct_index": 0,
+      "explanation": "Kelas anak (Knight dll.) mewarisi sifat kelas induk (Hero) — inilah inheritance."
+    },
+    {
+      "module_ref": "Modul 6",
+      "lesson_ref": "Basics of creating games in Pygame",
+      "difficulty": "medium",
+      "question": "Pada materi dasar Pygame (game Arkanoid), elemen yang perlu disiapkan antara lain...",
+      "options": [
+        "Background, sprite (bola, platform, monster), dan kontrol keyboard",
+        "Database pengguna",
+        "Website untuk skor",
+        "Aplikasi mobile"
+      ],
+      "correct_index": 0,
+      "explanation": "Game Pygame butuh jendela/background, sprite-sprite, dan cara menggerakkannya (keyboard)."
+    },
+    {
+      "module_ref": "Modul 6",
+      "lesson_ref": "Lists",
+      "difficulty": "medium",
+      "question": "Pada game 'Questions and Answers', menyimpan daftar pertanyaan lebih baik memakai list daripada if berantai karena...",
+      "options": [
+        "Item bisa diakses lewat indeks dan mudah diacak",
+        "List tidak butuh memori",
+        "List menghapus if selamanya",
+        "List lebih lambat dari if"
+      ],
+      "correct_index": 0,
+      "explanation": "List memungkinkan akses via indeks dan pemilihan acak (random.choice), lebih ringkas dari if 1..N."
+    },
+    {
+      "module_ref": "Modul 6",
+      "lesson_ref": "The Fast Clicker game. Part 1",
+      "difficulty": "medium",
+      "question": "Pada spesifikasi game Fast Clicker, pemain kalah jika...",
+      "options": [
+        "Tidak mencapai 5 poin dalam 10 detik",
+        "Berhasil mengklik satu kartu",
+        "Menunggu 1 detik",
+        "Keluar dari menu utama"
+      ],
+      "correct_index": 0,
+      "explanation": "Terms of reference: pemain kalah bila tidak mendapat 5 poin dalam 10 detik."
+    },
+    {
+      "module_ref": "Modul 6",
+      "lesson_ref": "The game 'Arkanoid'. Part 1",
+      "difficulty": "easy",
+      "question": "Menurut materi, game Arkanoid pertama kali diperkenalkan pada tahun...",
+      "options": ["1986", "1996", "2006", "2016"],
+      "correct_index": 0,
+      "explanation": "Materi menyebutkan Arkanoid pertama diperkenalkan tahun 1986 sebagai game mesin slot Jepang."
+    }
+  ]
+}

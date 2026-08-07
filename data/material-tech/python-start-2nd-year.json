@@ -1,0 +1,637 @@
+[
+ {
+  "file": "modul-01/m01p01-python-review-exception-handling.pdf",
+  "tech": [
+   "Exception handling",
+   "Review. Exception handling",
+   "The PlayForever game",
+   "0 <= 10 (bool)",
+   "name != 'John' (bool)",
+   "name = input(‘Your name:’)",
+   "saving it to a variable"
+  ]
+ },
+ {
+  "file": "modul-01/m01p02-python-review-lists.pdf",
+  "tech": [
+   "Review. Lists",
+   "list of subjects and lesson schedules;",
+   "Num. of fives = 0",
+   "Num. of fours = 0",
+   "amount_five = 0",
+   "amount_four = 0",
+   "mark = int(input('Enter grade:'))",
+   "if mark == 5:",
+   "amount_five += 1",
+   "if mark == 4:",
+   "amount_four += 1",
+   "knowledge = (amount_five + amount_four)/1*100",
+   "print('Class grade:', mark, ',quality of knowledge - ',",
+   "a + = 1 is equivalent to a = a + 1",
+   "mark = -1",
+   "marks = list()",
+   "mark != 0?",
+   "mark == 5?",
+   "mark == 4?",
+   "List for",
+   "while mark != 0:",
+   "mark = int(input('Enter grade (0 - stop input):'))",
+   "knowledge = (amount_five + amount_four) / len(marks) * 100",
+   "print('Class grade:', marks, ', quality of knowledge - ', knowledge)",
+   "It is convenient to store archive data in a special structure –– lists.",
+   "using lists and methods of working with them.",
+   "study a basic Python data structure — lists.",
+   "the while loop",
+   "The while loop:",
+   "repeat actions while the condition is true;"
+  ]
+ },
+ {
+  "file": "modul-01/m01p03-dictionaries.pdf",
+  "tech": [
+   "Dictionary",
+   "has needed to be digitized for a long time.",
+   "in the library's repository. If that book isn't there, it displays: \"There is no such book!\"",
+   "If there is no such book, display:",
+   "title = input('Enter the title of the book:')",
+   "title = title.lower()",
+   "if title == 'Little Longnose':",
+   "print('row 7 shelf 6')",
+   "elif title == 'The Magic Ring':",
+   "print('row 1 shelf 2')",
+   "elif title == 'Enchanted Lake':",
+   "print('row 10 shelf 3')",
+   "else:",
+   "print('There is no such book!')",
+   "Method 2. Using a list",
+   "numbers in the list must be",
+   "books = ['Enchanted Lake', 'The Magic Ring']",
+   "addresses = ['row 10 shelf 3', 'row 1 shelf 2']",
+   "if title in books:",
+   "for i in range(len(books)):",
+   "if books[i] == title:",
+   "print('Book location:', addresses[i])",
+   "Method 3. Using a dictionary",
+   "Python has a special structure for storing pairs of items — a dictionary.",
+   "books = {",
+   "print('Book location:', books[title])",
+   "of lists and methods of",
+   "What is a list?",
+   "How do we create a list?",
+   "list?"
+  ]
+ },
+ {
+  "file": "modul-01/m01p04-nested-data-structures.pdf",
+  "tech": [
+   "time. This is a great chance to prove yourself!",
+   "staff = {",
+   "'портфолио': ['Сайт Долголетие', 'Сайт PlayForever']",
+   "a dictionary with dictionaries.",
+   "True, False, (10 >= 99),",
+   "(‘ok’ == pass and 5 != count)",
+   "Lists (list)",
+   "names = list(), results = [81.2, 67.0],",
+   "students = ['Johns', 'Hobbs']",
+   "data = dict(),",
+   "reader_card = {num: 421, surname: 'Perkins'}",
+   "lists,",
+   "What is a dictionary ?",
+   "What data is stored in a dictionary?",
+   "Dictionary is an unordered set of key-value pairs.",
+   "books = dict() #empty dictionary",
+   "books = {'poem': 'Romeo and Juliet', 'fairy tale': 'nicholas",
+   "Dictionary declaration:",
+   "genre = input('Enter a genre:')",
+   "print('Recommendation:', books[genre])",
+   "dictionary",
+   "Get an item from a dictionary",
+   "Search for a key in a dictionary",
+   "Add a key-value pair to a dictionary",
+   "from a dictionary"
+  ]
+ },
+ {
+  "file": "modul-02/m02p01-classes-introduction-to-pyqt.pdf",
+  "tech": [
+   "Introduction to PyQt",
+   "Classes. Introduction to PyQt",
+   "using the professional PyQt library.",
+   "Learn the basic PyQt library tools and create",
+   "and how to program them using PyQt;",
+   "The PyQt library describes",
+   "To use PyQt tools properly, you",
+   "When we were working with the Turtle module, you learned",
+   "Example (objects of the \"turtle\" type):",
+   "t1 = Turtle()",
+   "t2 = Turtle()",
+   "Each turtle is endowed with data (color,",
+   "is a variable inside an object.",
+   "and their types? List the properties and methods provided in the program.",
+   "t1.name = 'Leonardo'",
+   "t1.shape('turtle')",
+   "t1.goto(-1 * width, 30)",
+   "t2.shape('turtle')",
+   "Creating two Turtle objects t1 and t2.",
+   "Applying the \"change shape\", \"pen up\" and \"goto\"",
+   "which class it belongs to.",
+   "it’s a turtle"
+  ]
+ },
+ {
+  "file": "modul-02/m02p02-interface-design.pdf",
+  "tech": [
+   "The ﬁnalists of the competition will have to answer",
+   "to learn new widgets in the PyQt library and",
+   "review what a class, class constructor, windowed",
+   "classes and the PyQt",
+   "What is a class ?",
+   "is a variable inside an object.",
+   "It’s a turtle",
+   "What does a class consist of?",
+   "list the properties in the constructor that deﬁne the",
+   "list the methods for managing an instance.",
+   "class Application():",
+   "def __init__(self, title_text):",
+   "self.title        = title_text",
+   "def print_info  (self):",
+   "Class name",
+   "instance of a class with",
+   "PyQt5 ––",
+   "from PyQt5.QtCore import Qt",
+   "from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QVBoxLayout",
+   "app = QApplication([])",
+   "main_win = QWidget()",
+   "button = QPushButton('Generate')",
+   "text = QLabel('Click to find out the winner')",
+   "winner = QLabel('?')",
+   "line = QVBoxLayout()",
+   "line.addWidget(text, alignment = Qt.AlignCenter)",
+   "line.addWidget(winner, alignment = Qt.AlignCenter)",
+   "line.addWidget(button, alignment = Qt.AlignCenter)"
+  ]
+ },
+ {
+  "file": "modul-02/m02p03-memory-card-application-p1.pdf",
+  "tech": [
+   "To help their specialists memorize the cultures and",
+   "With some rare exceptions (for",
+   "program them using PyQt",
+   "learn new parameters for positioning content in the",
+   "of the PyQt library",
+   "What PyQt modules do you",
+   "Importing PyQt modules",
+   "from PyQt5.QtCore import Qt",
+   "from PyQt5.QtWidgets import (",
+   "from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QRadioButton",
+   "v_line = QVBoxLayout()",
+   "title, alignment = Qt.AlignCenter"
+  ]
+ },
+ {
+  "file": "modul-02/m02p04-memory-card-application-p2.pdf",
+  "tech": [
+   "To sharpen their specialists' knowledge of cultures and",
+   "of the PyQt library",
+   "PyQt5 is",
+   "from PyQt5.QtCore import Qt",
+   "from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QVBoxLayout",
+   "def show_result():",
+   "when a button is clicked.",
+   "RadioGroupBox = QGroupBox('Options')",
+   "rbtn_1 = QRadioButton('Enets')",
+   "layout_quest = QHBoxLayout()",
+   "If the widgets we need have already been created, then:",
+   "RadioGroupBox = QGroupBox(\"Answer options\")",
+   "rbtn_2 = QRadioButton('Smurfs')",
+   "rbtn_3 = QRadioButton('Chulyms')",
+   "rbtn_4 = QRadioButton('Aleuts')",
+   "layout_ans1 = QHBoxLayout()",
+   "layout_ans2 = QVBoxLayout()",
+   "layout_ans3 = QVBoxLayout()"
+  ]
+ },
+ {
+  "file": "modul-02/m02p05-memory-card-application-p3.pdf",
+  "tech": [
+   "sharpen their specialists’ knowledge of world cultures",
+   "review what a class is and program your own class",
+   "What is a list?",
+   "lists do you know?",
+   "List is a structure for the ordered storage of various",
+   "results = [181, 176, 160, 178, 171, 179, 165]",
+   "print(‘Best result:’, results[0])",
+   "Get an element from the list",
+   "results = list()",
+   "to the list",
+   "Let’s say we have a list:",
+   "students = [‘Smith’, ‘Garcia’, ‘Patel’]",
+   "‘Garcia’ from the list",
+   "Check if the list contains",
+   "Sort the list in",
+   "What is a class ?",
+   "Class is",
+   "How do we create our own class ?",
+   "list the properties that determine the traits of an instance",
+   "list the methods for working with an instance of the class",
+   "class Application():",
+   "def __init__(self, title_text):",
+   "self.title        = title_text",
+   "def print_info  (self):",
+   "Class name",
+   "class with the indicated properties."
+  ]
+ },
+ {
+  "file": "modul-02/m02p06-memory-card-application-p4.pdf",
+  "tech": [
+   "from the list instead of always being asked in the same",
+   "not in order (as they are in the list), but randomly.",
+   "Instead, we introduce the cur_question variable locally (in the function scope):",
+   "cur_question = randint(0, len(questions_list) - 1)",
+   "q = questions_list[cur_question]",
+   "within the list.",
+   "def next_question():",
+   "class Question():",
+   "Class description",
+   "window.score = 0",
+   "window.total = 0",
+   "window.total += 1",
+   "def check_answer():",
+   "if answers[0].isChecked():",
+   "window.score += 1"
+  ]
+ },
+ {
+  "file": "modul-03/m03p01-basics-of-working-with-files.pdf",
+  "tech": [
+   "Of course, using PyQT!",
+   "open(\"notes.txt\", \"r\")",
+   "open(\"notes.txt\", \"w\")",
+   "open(\"notes.txt\", \"a\")",
+   "with open(\"notes.txt\", \"r\") as file:",
+   "data = file.read()",
+   "lines = file.readlines()",
+   "encoding = 'utf-8'",
+   "with open(\"poem.txt\", \"r\", encoding = \"utf-8\") as file:",
+   "open(\"poem.txt\", \"r\", encoding = \"utf-8\")",
+   "with open(",
+   "\"poem.txt\", \"r\", encoding = \"utf-8\"",
+   "data = file.read(1)",
+   "print(data)"
+  ]
+ },
+ {
+  "file": "modul-03/m03p02-smart-notes-p1.pdf",
+  "tech": [
+   "Of course, using PyQT!",
+   "A set of notes is a list",
+   "A note is a dictionary",
+   "List of tags",
+   "If it is arranged as a single note :",
+   "of the PyQt library and",
+   "For example, in a text ﬁle:",
+   "open(\"notes.txt\", \"r\")",
+   "open(\"notes.txt\", \"w\")",
+   "open(\"notes.txt\", \"a\")",
+   "with open(\"notes.txt\", \"r\") as file:",
+   "data = file.read()"
+  ]
+ },
+ {
+  "file": "modul-03/m03p03-smart-notes-p2.pdf",
+  "tech": [
+   "changes to the notes dictionary",
+   "how to clear list",
+   "of the PyQt library and how",
+   "very similar to a dictionary of",
+   "with open(\"f.json\", \"r\") as file:",
+   "with open(\"f.json\", \"w\") as file:",
+   "data = json.load(file)",
+   "into data dictionary",
+   "dictionary into a json ﬁle:",
+   "dictionary's keys as we",
+   "Sorting a dictionary's keys",
+   "while writing it into a ﬁle:",
+   "with open(\"notes_data.json\", \"w\") as file:",
+   "notes dictionary",
+   "QListWidget",
+   "button_save = QPushButton("
+  ]
+ },
+ {
+  "file": "modul-03/m03p04-smart-notes-p3.pdf",
+  "tech": [
+   "dictionary of",
+   "Format: Dictionaries or lists",
+   "dictionary.",
+   "You selected lines in the text (1 line = 1 student)"
+  ]
+ },
+ {
+  "file": "modul-04/m04p01-basics-of-image-processing.pdf",
+  "tech": [
+   "The ProTeam specialists were approached by a representative of",
+   "mind maps and checklists.",
+   "program your own ImageEditor class for photo",
+   "with open(\"f.txt\", \"r\") as file:",
+   "Turtle:",
+   "types? List the properties and methods provided in the program.",
+   "btn_OK = QPushButton('Answer')",
+   "window = QWidget()",
+   "You are given a piece of code. Name the objects and their types. List the",
+   "is a variable inside an object.",
+   "What is a class ?",
+   "How do you create your own class ?",
+   "A class is",
+   "List in the constructor the properties that deﬁne the",
+   "list the methods for managing an instance.",
+   "class Application():",
+   "def __init__(self, title_text):",
+   "self.title        = title_text",
+   "def print_info  (self):",
+   "Class name",
+   "instance of a class with"
+  ]
+ },
+ {
+  "file": "modul-04/m04p02-easy-editor-p1.pdf",
+  "tech": [
+   "turned to ProTeam specialists.",
+   "Maintaining a list of",
+   "Loading a list of",
+   "Checklist based on the mind map:",
+   "Show a preview of the image selected in the list.",
+   "Loading a list",
+   "Recall how to build interfaces using PyQt.",
+   "Program your own DirList class to load and display a list",
+   "list —",
+   "QListWidget",
+   "List the PyQt5 modules and  commands",
+   "from PyQt5.QtWidgets import QApplication, QWidget",
+   "app = QApplication([])",
+   "main_win = QWidget()"
+  ]
+ },
+ {
+  "file": "modul-04/m04p03-easy-editor-p2.pdf",
+  "tech": [
+   "turned to ProTeam specialists.",
+   "Maintaining a list of",
+   "Loading a list",
+   "Checklist based on the mind map:",
+   "Show a preview of the image selected in the list.",
+   "workdir variable after the programme has",
+   "workdir = ''",
+   "def chooseWorkdir():",
+   "workdir = QFileDialog.getExistingDirectory()",
+   "import os",
+   "files = os.listdir(<ﬁle>)",
+   "Retrieve a list of ﬁle names",
+   "Class Image:"
+  ]
+ },
+ {
+  "file": "modul-04/m04p04-easy-editor-p3.pdf",
+  "tech": [
+   "Let’s highlight on our mind map and checklist what tasks we have for",
+   "Maintaining a list of",
+   "Loading a list",
+   "Checklist based on the mind map:",
+   "Show a preview of the image selected in the list.",
+   "What will be the value of the cur_path variable",
+   "cur_dir = ''",
+   "filename = 'car.png'",
+   "def chooseDir():",
+   "cur_dir = QFileDialog.getExistingDirectory()",
+   "return cur_dir",
+   "cur_path = os.path.join(cur_dir, filename)",
+   "from PIL import ImageFilter",
+   "pic_gray = original.convert('L')",
+   "pic_blured = original.filter(ImageFilter.BLUR)",
+   "pic_up = original.transpose(Image.ROTATE_90)",
+   "pic_mir = original.transpose(Image.FLIP_LEFT_RIGHT)",
+   "Let’s complete the ImageProcessor class with image processing",
+   "class ImageProcessor():",
+   "def do_flip(self):"
+  ]
+ },
+ {
+  "file": "modul-05/m05p01-basics-of-game-creation.pdf",
+  "tech": [
+   "The PyGame library has been selected as the main tool.",
+   "comfortable with the basics of PyGame!",
+   "creation using PyGame.",
+   "explore the PyGame library for game creation;",
+   "using PyGame",
+   "PyGame",
+   "The PyGame library is hierarchical.",
+   "The pygame.transform",
+   "The pygame.event module",
+   "from pygame import *",
+   "PyGame library",
+   "In PyGame, the origin is located in the upper left corner of the window.",
+   "window = display.set_mode((700, 500))",
+   "background = transform.scale(image.load(\"background.png\"), (700, 500))",
+   "game = True — the game is",
+   "game = False",
+   "events = event.get()",
+   "Returns a list of events that have occurred"
+  ]
+ },
+ {
+  "file": "modul-05/m05p02-maze-p1.pdf",
+  "tech": [
+   "The player wins if they go through the maze without touching the",
+   "PyGame for that?",
+   "We will ﬁll out the checklist as we mark off the project tasks:",
+   "Planning the work: checklist",
+   "Checklist of tasks for today, as suggested by Cole:",
+   "review how to create games using PyGame.",
+   "window = display.set_mode((700, 500))",
+   "In PyGame, the origin is located in the upper left corner of the window.",
+   "game = True – the game is going on",
+   "game = False",
+   "from pygame import *",
+   "background = transform.scale(image.load(\"background.png\"), (700, 500))",
+   "game = True",
+   "while game:",
+   "for e in event.get():",
+   "if e.type == QUIT:"
+  ]
+ },
+ {
+  "file": "modul-05/m05p03-maze-p2.pdf",
+  "tech": [
+   "and add the tasks for today to our checklist.",
+   "Let's add the tasks for today to the checklist.Link to level",
+   "Planning work: checklist",
+   "Updated checklist from the developer Cole:",
+   "Planning the work: checklist",
+   "Recall how to make games with PyGame.",
+   "game = True — the game is going",
+   "game = False",
+   "while game:",
+   "for e in event.get():",
+   "if e.type == QUIT:",
+   "How do we create a child class from an",
+   "Class inheritance helps us transfer all the skills previously written for a more",
+   "general class to another, more private class — a child class.",
+   "Sprite class adapted for",
+   "Described in PyGame",
+   "Superclass and child class",
+   "Let’s suppose the superclass is already written. Then we will need to",
+   "class Application(            ):",
+   "def __init__(self,                        ):",
+   "def print_info   (self):",
+   "Superclass name",
+   "The child class is only"
+  ]
+ },
+ {
+  "file": "modul-05/m05p04-maze-p3.pdf",
+  "tech": [
+   "and add the tasks for today to our checklist.",
+   "ready-made PyGame object?",
+   "Let's program the Wall class to inherit from Sprite.",
+   "We know that the Sprite class contains lots of universal methods.",
+   "Let's add the tasks for today to the checklist.",
+   "Planning the work: checklist",
+   "Updated checklist from the developer Cole:",
+   "Learn new object classes from PyGame.",
+   "Program the conditions for winning and losing in the",
+   "of PyGame libraries and",
+   "game = True — the game is going",
+   "game = False",
+   "By the way! Different variables can be",
+   "The game variable",
+   "If game = False, the program",
+   "The finish variable",
+   "If finish = True, the user has",
+   "How do we create a child class from",
+   "Class inheritance helps us transfer all the skills previously written for a more",
+   "general class to another, more private class — a child class.",
+   "Wall class adapted for Maze",
+   "Described in PyGame",
+   "Superclass and child class",
+   "Let’s suppose the superclass is already written. Then we will need to",
+   "class Application(            ):",
+   "def __init__(self,                        ):",
+   "def print_info   (self):",
+   "Superclass name"
+  ]
+ },
+ {
+  "file": "modul-05/m05p05-shooter-p1.pdf",
+  "tech": [
+   "there are 6 enemies on the screen at any given time.",
+   "We will ﬁll in the checklist as the project tasks are allocated:",
+   "Planning the work: checklist",
+   "Cole has suggested checklist of tasks for today:",
+   "Recall how to create games using pygame.",
+   "Sprite class from pygame).",
+   "window = display.set_mode((700, 500))",
+   "What is a class ?",
+   "How do we create a class ?"
+  ]
+ },
+ {
+  "file": "modul-05/m05p06-shooter-p2.pdf",
+  "tech": [
+   "and add the tasks for today to the checklist.",
+   "there are 5 enemies on the screen at any given time.",
+   "Let's add the tasks for today to the checklist.",
+   "Planning the work: checklist",
+   "Updated checklist from the developer Cole:",
+   "introduce a global variable into the game."
+  ]
+ },
+ {
+  "file": "modul-05/m05p07-shooter-p3.pdf",
+  "tech": [
+   "and add the tasks for today to the checklist.",
+   "there are 5 enemies on the screen at any given time.",
+   "touching an enemy",
+   "a Bullet class that is a child",
+   "class of the Sprite class.",
+   "Planning work: checklist",
+   "Updated checklist from the developer Cole:",
+   "global variables!"
+  ]
+ },
+ {
+  "file": "modul-05/m05p08-shooter-p4.pdf",
+  "tech": [
+   "there are 5 enemies on the screen at the same time.",
+   "Planning work: checklist",
+   "Updated checklist from developer Cole:",
+   "local and global variables;"
+  ]
+ },
+ {
+  "file": "modul-05/m05p09-finishing-and-presenting-the-project.pdf",
+  "tech": [
+   "more realistic and exciting.",
+   "Introduce a ﬂag variable that is"
+  ]
+ },
+ {
+  "file": "modul-06/m06p01-building-the-project-in-the-application.pdf",
+  "tech": [
+   "Last time, you ﬁnished working with Pygame and",
+   "Last time, you ﬁnished working with PyGame and presented",
+   "study the VS Code extensions and the list of",
+   "package your favorite Pygame game into an"
+  ]
+ },
+ {
+  "file": "modul-06/m06p02-review-introduction-to-git.pdf",
+  "tech": [
+   "application development in PyQt.",
+   "PyQt;",
+   "publish the application code in PyQt, supplementing",
+   "pip list"
+  ]
+ },
+ {
+  "file": "modul-06/m06p03-ping-pong-p1.pdf",
+  "tech": [
+   "a complete checklist for creating the prototype;",
+   "create a checklist for the implementation of the game.",
+   "In the checklist, we will",
+   "Creating a project checklist",
+   "Open the \"The Ping-Pong game: planning\" task and create a project checklist.",
+   "Also add to the checklist: creating a repository, committing the implemented",
+   "The beginning of the checklist could be as follows:",
+   "Checklist for the prototype of the \"Ping-Pong\" game from the developer",
+   "using the Pygame library..."
+  ]
+ },
+ {
+  "file": "modul-06/m06p04-ping-pong-p2.pdf",
+  "tech": [
+   "A complete checklist for creating the prototype.",
+   "last time.",
+   "Project checklist",
+   "class — update() method",
+   "the class method.",
+   "speed_x = 3",
+   "speed_y = 3",
+   "while game:",
+   "if finish != True:",
+   "ball.rect.x += speed_x",
+   "ball.rect.y += speed_y",
+   "Let's set in variables the speed",
+   "While the game is still going...",
+   "speed_y *= -1",
+   "speed_x *= -1"
+  ]
+ },
+ {
+  "file": "modul-07/m07p01-graduation-python-hackathon-2.pdf",
+  "tech": [
+   "the round. Tasks cannot be repeated.",
+   "the tournament table, it cannot be repeated) and shows it to"
+  ]
+ }
+]

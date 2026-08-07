@@ -1,0 +1,460 @@
+{
+  "course": "visual-programming",
+  "questions": [
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Loops",
+      "difficulty": "easy",
+      "question": "Menurut materi Visual Programming, loop didefinisikan sebagai...",
+      "options": [
+        "Algoritma yang mengulang urutan perintah",
+        "Satu perintah tunggal yang dijalankan sekali",
+        "Gambar sprite di layar",
+        "Bahasa pemrograman baru"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: Loop is an algorithm that repeats a sequence of commands."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Loops",
+      "difficulty": "easy",
+      "question": "Program didefinisikan dalam materi sebagai...",
+      "options": [
+        "Algoritma yang ditulis dalam bahasa pemrograman",
+        "Kumpulan gambar acak",
+        "Perangkat keras komputer",
+        "Aturan kelas"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: Program is an algorithm written in a programming language."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Initial placement",
+      "difficulty": "easy",
+      "question": "Dua jenis loop yang dibahas pada materi Initial arrangement adalah...",
+      "options": [
+        "Infinite loop (tak terbatas) dan finite loop (terbatas)",
+        "Loop cepat dan loop lambat",
+        "Loop besar dan loop kecil",
+        "Loop terbuka dan loop tertutup"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi menunjukkan Loop Types: Infinite Loop dan Finite Loop."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Events",
+      "difficulty": "easy",
+      "question": "Pada materi Events, sprite diajarkan untuk merespons...",
+      "options": [
+        "Klik pada sprite (event)",
+        "Suara dari mikrofon",
+        "Koneksi internet",
+        "Ukuran layar"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: teach sprites to respond to clicking — event klik menjalankan skrip."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Project. Personal website",
+      "difficulty": "medium",
+      "question": "Jika skrip proyek mengandung infinite loop (loop tak terbatas), hal penting yang harus diperhatikan adalah...",
+      "options": [
+        "Cara menghentikan program (misal tombol berhenti)",
+        "Menambah sprite sebanyak mungkin",
+        "Menghapus semua event",
+        "Memperbesar ukuran stage"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi menekankan memikirkan konsekuensi infinite loop — perlu cara menghentikan eksekusinya."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Coordinates",
+      "difficulty": "easy",
+      "question": "Pada materi koordinat Scratch, titik (X:0; Y:0) berada di...",
+      "options": [
+        "Perpotongan sumbu X dan Y (tengah stage)",
+        "Sudut kiri atas layar",
+        "Di luar layar",
+        "Tidak ada titik tersebut"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: (X:0; Y:0) is the point of intersection of the X and Y axes — titik pusat stage."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Coordinates",
+      "difficulty": "easy",
+      "question": "Sprite bisa 'teleport' (pindah instan) ke koordinat tertentu menggunakan perintah...",
+      "options": [
+        "go to: X _ Y _",
+        "jump to",
+        "fly over",
+        "slide around"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: Sprites can 'teleport' using the 'go to: X _ Y _' command."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Pointing in different directions",
+      "difficulty": "medium",
+      "question": "Setelah perintah 'point in direction 90', sprite akan menghadap ke...",
+      "options": [
+        "Kanan",
+        "Kiri",
+        "Atas",
+        "Bawah"
+      ],
+      "correct_index": 0,
+      "explanation": "Dalam Scratch, arah 90 = kanan (0 = atas, 90 = kanan, 180 = bawah, -90 = kiri)."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Turns and degrees",
+      "difficulty": "easy",
+      "question": "Satu putaran penuh dalam derajat bernilai...",
+      "options": ["360°", "180°", "120°", "90°"],
+      "correct_index": 0,
+      "explanation": "Materi turns and degrees menunjukkan 360 untuk satu putaran penuh."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Messages",
+      "difficulty": "medium",
+      "question": "Fungsi messages (pesan) pada materi Pacman adalah...",
+      "options": [
+        "Mengontrol sprite menggunakan sprite lain",
+        "Menghapus sprite dari proyek",
+        "Mengubah warna latar belakang saja",
+        "Menyimpan skor permainan"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: we'll learn how to control sprites using other sprites — lewat mekanisme broadcast message."
+    },
+    {
+      "module_ref": "Modul 3",
+      "lesson_ref": "Changing coordinates",
+      "difficulty": "easy",
+      "question": "Dalam materi, condition (kondisi) didefinisikan sebagai...",
+      "options": [
+        "Keadaan yang menentukan keputusan/aksi; bernilai benar atau salah",
+        "Gambar di stage",
+        "Jumlah sprite dalam proyek",
+        "Kecepatan internet"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: a condition is a circumstance on which a decision or action depends; true or false."
+    },
+    {
+      "module_ref": "Modul 3",
+      "lesson_ref": "Conditions and selection operator",
+      "difficulty": "medium",
+      "question": "Perbedaan if…then dengan if…else adalah...",
+      "options": [
+        "if…else punya aksi alternatif saat kondisi salah",
+        "if…then tidak pernah dijalankan",
+        "if…else tidak memakai kondisi",
+        "Tidak ada perbedaan"
+      ],
+      "correct_index": 0,
+      "explanation": "if…then hanya menjalankan aksi saat benar; if…else menambah cabang aksi untuk kondisi salah (materi lampu lalu lintas)."
+    },
+    {
+      "module_ref": "Modul 3",
+      "lesson_ref": "Procedures",
+      "difficulty": "medium",
+      "question": "Jika sprite diberi perintah 'change X by 5', sprite bergerak ke arah...",
+      "options": [
+        "Kanan",
+        "Kiri",
+        "Atas",
+        "Bawah"
+      ],
+      "correct_index": 0,
+      "explanation": "X positif berarti ke kanan; 'change X by 5' menambah koordinat X sebesar 5 ke kanan."
+    },
+    {
+      "module_ref": "Modul 3",
+      "lesson_ref": "Procedures",
+      "difficulty": "medium",
+      "question": "Perintah 'change X by -7' akan membuat sprite bergerak ke...",
+      "options": [
+        "Kiri",
+        "Kanan",
+        "Atas",
+        "Tidak bergerak"
+      ],
+      "correct_index": 0,
+      "explanation": "Nilai negatif pada X berarti ke kiri: sprite berpindah 7 langkah ke kiri."
+    },
+    {
+      "module_ref": "Modul 3",
+      "lesson_ref": "Game planning",
+      "difficulty": "easy",
+      "question": "Pada materi perencanaan game, daftar tugas dibagi menjadi kolom-kolom...",
+      "options": [
+        "Tasks / In progress / Done",
+        "Start / Stop / Restart",
+        "Easy / Medium / Hard",
+        "Red / Yellow / Green"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi menunjukkan papan perencanaan: Tasks, In progress, Done."
+    },
+    {
+      "module_ref": "Modul 3",
+      "lesson_ref": "Game presentation",
+      "difficulty": "medium",
+      "question": "Menurut materi presentasi proyek, struktur presentasi meliputi...",
+      "options": [
+        "Nama proyek, alasan memilih, karakter, scene, dan implementasi teknis",
+        "Hanya nama pembuat",
+        "Hanya skor game",
+        "Daftar harga aplikasi"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi memberikan 5 poin struktur: nama, alasan, karakter, scene/stage, implementasi teknis."
+    },
+    {
+      "module_ref": "Modul 4",
+      "lesson_ref": "Logical operators AND, OR, NOT",
+      "difficulty": "medium",
+      "question": "Operator logika AND menghasilkan nilai true jika...",
+      "options": [
+        "Kedua argumennya true",
+        "Salah satu argumennya true",
+        "Kedua argumennya false",
+        "Tidak ada argumen"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: The AND value: true if both arguments are true; otherwise false."
+    },
+    {
+      "module_ref": "Modul 4",
+      "lesson_ref": "Coordinate areas",
+      "difficulty": "hard",
+      "question": "Menurut hukum De Morgan yang disebut dalam materi, not (A and B) setara dengan...",
+      "options": [
+        "(not A) or (not B)",
+        "(not A) and (not B)",
+        "A or B",
+        "(A and B) not"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi menyatakan: not (A and B) = (not A) or (not B)."
+    },
+    {
+      "module_ref": "Modul 4",
+      "lesson_ref": "Random numbers and ranges",
+      "difficulty": "medium",
+      "question": "Pada materi Rockfall (batu jatuh), sprite diprogram untuk muncul di...",
+      "options": [
+        "Posisi acak (koordinat acak)",
+        "Posisi tetap di tengah",
+        "Di luar layar",
+        "Pojok kanan bawah saja"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: how to program a sprite to appear in a random place — memakai bilangan acak."
+    },
+    {
+      "module_ref": "Modul 4",
+      "lesson_ref": "Group project",
+      "difficulty": "easy",
+      "question": "Aturan brainstorming pada materi proyek kelompok adalah...",
+      "options": [
+        "Sampaikan semua ide tanpa mengkritik/menilai ide siapa pun",
+        "Hanya ide terbaik yang boleh disampaikan",
+        "Ide harus dikritik dulu",
+        "Tidak boleh ada ide baru"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: express any ideas even silly ones; do not criticize or rate any ideas."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "Variables in loops",
+      "difficulty": "easy",
+      "question": "Aturan penamaan variabel menurut materi adalah...",
+      "options": [
+        "Nama harus mencerminkan isi dan tipenya",
+        "Boleh nama apa saja tanpa makna",
+        "Harus satu huruf",
+        "Harus angka"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: The Name of the variable must reflect its content and type."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "Data types and operators",
+      "difficulty": "medium",
+      "question": "Pada materi mobil dan bensin, variabel G (gas) berkurang 10 setiap 100 km (G - 10). Jika G = 40, setelah menempuh 200 km nilai G menjadi...",
+      "options": ["20", "40", "60", "0"],
+      "correct_index": 0,
+      "explanation": "Setiap 100 km bensin berkurang 10; 200 km = dua kali pengurangan: 40 - 10 - 10 = 20."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "Variables in games",
+      "difficulty": "easy",
+      "question": "Pada materi skor game, langkah pertama membuat variabel skor adalah...",
+      "options": [
+        "Membuat variabel dengan nama yang sesuai lalu memberi nilai awal",
+        "Menghapus semua sprite",
+        "Mengubah background",
+        "Memperbesar stage"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: Create a variable with a suitable name; Set the initial value."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "Variables as parameters",
+      "difficulty": "medium",
+      "question": "Menurut materi, karakteristik yang dimasukkan ke blok Scratch disebut...",
+      "options": ["parameter", "variabel global", "event", "sprite"],
+      "correct_index": 0,
+      "explanation": "Materi: The characteristics we put into Scratch blocks are called parameters."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "Variables as parameters",
+      "difficulty": "medium",
+      "question": "Agar parameter bisa berubah nilainya (misal pengumuman pemenang), materi menggunakan...",
+      "options": ["variabel", "gambar", "suara", "warna baru"],
+      "correct_index": 0,
+      "explanation": "Materi: Parameters can change, and to make them change, we use variables."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "The Chatbot project",
+      "difficulty": "easy",
+      "question": "Selain memprogram chatbot, pada materi proyek chatbot kita juga belajar tentang...",
+      "options": [
+        "Cara kerja neural network (jaringan saraf)",
+        "Cara mencetak dokumen",
+        "Sejarah komputer",
+        "Menggambar manual"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: we'll find out how neural networks work — dibahas bersama perencanaan chatbot."
+    },
+    {
+      "module_ref": "Modul 6",
+      "lesson_ref": "Classes and objects",
+      "difficulty": "medium",
+      "question": "Clone (klon) mewarisi properti dari sprite induknya, yaitu...",
+      "options": [
+        "Posisi, kostum, dan efek grafis",
+        "Hanya namanya saja",
+        "Skor permainan saja",
+        "Tidak mewarisi apa pun"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: The clone inherits the position, costume, and graphical effects of the parent sprite."
+    },
+    {
+      "module_ref": "Modul 6",
+      "lesson_ref": "Local and global variables",
+      "difficulty": "medium",
+      "question": "Event 'when green flag clicked' pada clone akan...",
+      "options": [
+        "Tidak terjadi untuk clone (meski clone mewarisi semua skrip)",
+        "Selalu terjadi seperti sprite induk",
+        "Menghapus clone",
+        "Menggandakan clone"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: The clone inherits all the scripts, but the 'when green flag clicked' event does not occur for the clone."
+    },
+    {
+      "module_ref": "Modul 6",
+      "lesson_ref": "Local and global variables",
+      "difficulty": "medium",
+      "question": "Sprite yang bertugas membuat clone disebut...",
+      "options": ["factory (pabrik)", "manager", "master", "generator"],
+      "correct_index": 0,
+      "explanation": "Materi: The sprite that creates clones is called a factory."
+    },
+    {
+      "module_ref": "Modul 6",
+      "lesson_ref": "Local and global variables",
+      "difficulty": "medium",
+      "question": "Kenapa clone yang tidak terpakai harus dihapus?",
+      "options": [
+        "Karena jumlah clone terbatas",
+        "Karena clone berbahaya",
+        "Karena clone menghapus proyek",
+        "Tidak perlu dihapus"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: Unused clones should be deleted since the number of clones is limited."
+    },
+    {
+      "module_ref": "Modul 6",
+      "lesson_ref": "Classes and objects",
+      "difficulty": "medium",
+      "question": "Menurut materi, class (kelas) adalah...",
+      "options": [
+        "Cara mendeskripsikan banyak objek sejenis yang berbagi karakteristik sama",
+        "Ruang kelas di sekolah",
+        "Jenis suara di Scratch",
+        "Nama stage"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: A class is a way of describing lots of objects; class objects share common characteristics."
+    },
+    {
+      "module_ref": "Modul 6",
+      "lesson_ref": "Creating the Mirrors game",
+      "difficulty": "medium",
+      "question": "Pada game Mirrors, kursor berubah bentuk ketika menyentuh sprite Mirror karena...",
+      "options": [
+        "Menunjukkan pengguna bisa melakukan aksi di situ",
+        "Ada bug dalam game",
+        "Komputer lambat",
+        "Sprite rusak"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: The changed cursor indicates that the user can perform an action."
+    },
+    {
+      "module_ref": "Modul 6",
+      "lesson_ref": "Completing the Mirrors game",
+      "difficulty": "medium",
+      "question": "Pada game Mirrors, kristal memiliki berapa kostum warna berbeda?",
+      "options": ["10", "3", "5", "100"],
+      "correct_index": 0,
+      "explanation": "Materi: In total, the crystal has 10 costumes of different colors."
+    },
+    {
+      "module_ref": "Modul 6",
+      "lesson_ref": "Completing the Mirrors game",
+      "difficulty": "easy",
+      "question": "Pada game Mirrors, variabel 'Rays' (sinar) diinisialisasi dengan nilai awal...",
+      "options": ["0", "10", "100", "-1"],
+      "correct_index": 0,
+      "explanation": "Materi: Rays variable is equal to 0 — nilai awal sebelum bertambah 1 tiap sinar tersentuh."
+    },
+    {
+      "module_ref": "Modul 7",
+      "lesson_ref": "Preparing for the final project",
+      "difficulty": "easy",
+      "question": "Tahap akhir kursus Visual Programming adalah...",
+      "options": [
+        "Membuat dan mempresentasikan proyek akhir",
+        "Menghapus semua proyek",
+        "Mengulang Modul 1",
+        "Ujian tertulis saja"
+      ],
+      "correct_index": 0,
+      "explanation": "Modul 7 berisi persiapan proyek akhir, penyelesaian, lalu kelulusan Visual Programming."
+    }
+  ]
+}

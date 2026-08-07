@@ -1,0 +1,359 @@
+[
+ {
+  "file": "modul-01/m01p01-review-algorithms-and-data-structures.pdf",
+  "tech": [
+   "A variable is...?",
+   "A list is...?",
+   "A dictionary is...?",
+   "A variable is a data element that has its",
+   "A list is a structure for the ordered",
+   "A dictionary is an unordered set of",
+   "Review: variables,",
+   "Review: variables, conditions, and loops",
+   "list",
+   "Dictionary",
+   "print()",
+   "input()"
+  ]
+ },
+ {
+  "file": "modul-01/m01p02-review-functions-and-oop.pdf",
+  "tech": [
+   "list for its services and the ability to sell pre-made packages of several services.",
+   "independent price lists within one program, for different types of media.",
+   "As a part of this project, it is also necessary to implement the ability for every price list to store",
+   "We will be using a dictionary to store the services’ names and prices.",
+   "How do we store a price list’s name together with the dictionary?",
+   "How do we create two different price lists within one project?",
+   "Remember what functions, arguments, and return values are.",
+   "Remember what OOP, classes, objects, and class constructors are.",
+   "Create our own program to store price lists.",
+   "print()",
+   "input()",
+   "How are the results of print() and input()",
+   "idea = input('Do you have an idea for a startup?')",
+   "print(idea,'is a good idea!')",
+   "Return a value",
+   "This function does not explicitly return a value:",
+   "This function does return a value:",
+   "result = function_name(argument)",
+   "Return value",
+   "Actually, all these functions return values.",
+   "But what does print() return, then?",
+   "print('World of Code')",
+   "print(print('World of Code'))",
+   "print(len('World of Code'))",
+   "def function_name(parameter1, parameter2, ...):"
+  ]
+ },
+ {
+  "file": "modul-02/m02p01-introduction-to-mobile-development.pdf",
+  "tech": [
+   "improve as a specialist, and ultimately succeed.",
+   "Let’s repeat the main steps of app",
+   "Let’s look at the syntax for these steps in Kivy."
+  ]
+ },
+ {
+  "file": "modul-02/m02p02-mvp-mobile-app-development.pdf",
+  "tech": [
+   "Checklists"
+  ]
+ },
+ {
+  "file": "modul-02/m02p03-from-prototype-to-mvp.pdf",
+  "tech": [
+   "the card to the checklist of the main.py module.",
+   "x = int(“”)",
+   "print(x)",
+   "x = int(“6.1”)",
+   "class PulseScr(Screen):",
+   "def next(self):",
+   "p1 = int(self.in_result.text)",
+   "self.manager.current = 'sits'",
+   "Exceptions handling",
+   "Exceptions are the errors detected during the program execution.",
+   "execution and outputs an error (exception) message to the terminal:",
+   "To prevent the program from interrupting when an exception occurs,",
+   "we use the try-except construct in the code.",
+   "try:",
+   "# while running",
+   "except:"
+  ]
+ },
+ {
+  "file": "modul-02/m02p04-visualization-and-testing.pdf",
+  "tech": [
+   "RGBA:        black = (0, 0, 0, 1)",
+   "HEX:           black = '#000000'",
+   "black = (0, 0, 0, 1)",
+   "black = (R, G, B, A)",
+   "black = '#00 00 00'",
+   "from kivy.core.window import Window",
+   "pink = (0.87, .54, .8, 1)",
+   "Window.clearcolor = pink",
+   "btn_color = (0.98, 0.31, 0.8, 1)",
+   "btn.background_color = btn_color",
+   "txt = '[color=#4B0082]' + 'Enter your name:' + '[/color]'",
+   "lbl1 = Label(text=txt, markup=True)",
+   "You can ﬁnd the full list in the ofﬁcial documentation."
+  ]
+ },
+ {
+  "file": "modul-03/m03p01-pandas-basics-filtering-data.pdf",
+  "tech": [
+   "of Pandas. Data",
+   "●Analyze structured and unstructured data using the Pandas library."
+  ]
+ },
+ {
+  "file": "modul-03/m03p02-methods-of-grouping-data.pdf",
+  "tech": [
+   "Pandas library?",
+   "Pandas data structures"
+  ]
+ },
+ {
+  "file": "modul-03/m03p03-data-cleaning-feature-engineering.pdf",
+  "tech": [
+   "List the data handling methods",
+   "Pandas",
+   "df.groupby(by = 'Content Rating')['Rating'].mean()",
+   "df[df['Type']=='Free'].groupby(by = 'Content Rating')['Rating'].mean()",
+   "df.pivot_table(columns = 'Content Rating',",
+   "index = 'Category',",
+   "values = 'Reviews',",
+   "aggfunc = 'mean')",
+   "df[df['Type'] == 'Paid'].pivot_table(columns = 'Content Rating',"
+  ]
+ },
+ {
+  "file": "modul-03/m03p04-solving-analytical-cases.pdf",
+  "tech": [
+   "research question, and a hypothesis that can be put forward.",
+   "hypotheses put forward by the author",
+   "Example question for market research: how to attract applicants to enroll in preparatory"
+  ]
+ },
+ {
+  "file": "modul-03/m03p05-data-visualization.pdf",
+  "tech": [
+   "in Pandas",
+   "New topic: Data visualization in Pandas",
+   "the Pandas library."
+  ]
+ },
+ {
+  "file": "modul-03/m03p06-pitching-presenting-to-investors.pdf",
+  "tech": [
+   "of responsibility for each person in the team (2 min)."
+  ]
+ },
+ {
+  "file": "modul-04/m04p01-machine-learning-algorithms.pdf",
+  "tech": []
+ },
+ {
+  "file": "modul-04/m04p02-strategy-and-tactics-for-training-models.pdf",
+  "tech": [
+   "While working on the case, you need to identify the clients who are most likely to",
+   "putting forward hypotheses;",
+   "selecting variables to build the model.",
+   "putting forward our initial hypotheses (when we are only",
+   "looking for patterns in the data)?",
+   "checklist or on the board in Trello.",
+   "import pandas as pd",
+   "df = pd.read_csv('data.csv')",
+   "print(df.head())",
+   "sex — gender (0 = not speciﬁed, 1 = female, 2 = male).",
+   "has_photo — whether there's a proﬁle photo (0 = no photo, 1 = photo).",
+   "has_mobile — whether the phone number is known (0 = unknown, 1 =",
+   "12. langs — the list of languages that the user speaks."
+  ]
+ },
+ {
+  "file": "modul-04/m04p03-working-on-individual-projects.pdf",
+  "tech": [
+   "processing and machine learning specialists."
+  ]
+ },
+ {
+  "file": "modul-04/m04p04-project-presentations-competition-results.pdf",
+  "tech": [
+   "Use dummy variables (0 and 1).",
+   "the target variable."
+  ]
+ },
+ {
+  "file": "modul-05/m05p01-getting-to-know-panda-3d.pdf",
+  "tech": [
+   "time to return to developing your own startup.",
+   "alone in his spare time.",
+   "pointing forward ."
+  ]
+ },
+ {
+  "file": "modul-05/m05p02-loading-a-map-working-with-text-files.pdf",
+  "tech": [
+   "class Mapmanager():",
+   "def __init__(self):",
+   "def addBlock(self, position):",
+   "with open('my_file.txt') as file:",
+   "with open('my_file.txt','r') as file:",
+   "Variable for",
+   "open(“notes.txt”, “r”)",
+   "open(“notes.txt”, “w”)",
+   "open(“notes.txt”, “a”)",
+   "open(“notes.txt”)",
+   "for string in file:",
+   "If we iterate over the elements of a string in a for loop:",
+   "Solution: You can convert a string to a list using spaces as separators.",
+   "for symbol in string:",
+   "string_list = string.split(' ')",
+   "for symbol in string_list:"
+  ]
+ },
+ {
+  "file": "modul-05/m05p03-controlling-the-player.pdf",
+  "tech": [
+   "a separate Hero class in the hero.py ﬁle.",
+   "In what part of the code will an instance of the class be",
+   "class Game(ShowBase):",
+   "def __init__(self):",
+   "self.land = Mapmanager()",
+   "self.hero = Hero((x,y,z),self.land)",
+   "class Hero():",
+   "def __init__(self,pos,land):",
+   "create the land = land property",
+   "self.land = land",
+   "self.hero = loader.loadModel('smiley')",
+   "def cameraBind(self):"
+  ]
+ },
+ {
+  "file": "modul-05/m05p04-main-game-mode.pdf",
+  "tech": [
+   "Movement forwards, backwards, left, and right, regardless of the blocks.",
+   "How was backwards movement",
+   "Backward movement",
+   "class Hero():",
+   "def __init__(self,pos,land):",
+   "def accept_events(self):",
+   "base.accept( 's' + '-repeat' , self.back)",
+   "def back(self):",
+   "def up(self):",
+   "base.accept( 'e' + '-repeat', self.up )",
+   "def changeMode(self):"
+  ]
+ },
+ {
+  "file": "modul-05/m05p05-working-with-the-map.pdf",
+  "tech": [
+   "with open('my_file.txt') as file:",
+   "open(“notes.txt”, “r”)",
+   "open(“notes.txt”, “w”)",
+   "open(“notes.txt”, “a”)",
+   "open(“notes.txt”)",
+   "open(“notes.dat”, “rb”)",
+   "open(“notes.dat”, “wb”)",
+   "with open(“notes.dat”, “rb”) as f:",
+   "data = pickle.load( f )",
+   "with open(“notes.dat”, “wb”) as f",
+   "import pickle",
+   "shoplistfile = 'shoplist.dat' # filename where we will save the object",
+   "shoplist = [ 'apples' , 'mango' , 'carrots' ] # shopping list",
+   "with open(shoplistfile, 'wb') as f: # open file for writing",
+   "pickle.dump(shoplist, f) # put object into file",
+   "with open (shoplistfile, 'rb' ) as f: # open file for reading",
+   "storedlist = pickle.load(f) # load object from file",
+   "class Mapmanager():",
+   "def saveMap(self):",
+   "def loadMap(self):",
+   "class Hero():",
+   "def accept_events(self):"
+  ]
+ },
+ {
+  "file": "modul-05/m05p06-presenting-projects.pdf",
+  "tech": [
+   "It's difﬁcult for lone programmers to succeed in the computer",
+   "There will usually be a whole team of different specialists"
+  ]
+ },
+ {
+  "file": "modul-06/m06p01-introduction-to-web-development.pdf",
+  "tech": [
+   "Developing 3D games is hard work and takes a lot of time.",
+   "Not all specialists can implement the entire cycle of creating a"
+  ]
+ },
+ {
+  "file": "modul-06/m06p02-web-page-formatting.pdf",
+  "tech": [
+   "while adding the <small> tag makes the text smaller. Tags",
+   "document, like headings, we will have to repeat all the"
+  ]
+ },
+ {
+  "file": "modul-06/m06p03-working-with-databases.pdf",
+  "tech": [
+   "document to the browser every time.",
+   "Vladislav Listov"
+  ]
+ },
+ {
+  "file": "modul-06/m06p04-structure-of-a-database.pdf",
+  "tech": []
+ },
+ {
+  "file": "modul-06/m06p05-dynamic-website-sessions.pdf",
+  "tech": [
+   "The dynamic request is forwarded by the server to the web"
+  ]
+ },
+ {
+  "file": "modul-06/m06p06-data-acquisition-and-processing.pdf",
+  "tech": [
+   "def test()",
+   "def index()",
+   "def result()",
+   "from flask import session — connecting the session object.",
+   "time."
+  ]
+ },
+ {
+  "file": "modul-06/m06p07-templates.pdf",
+  "tech": [
+   "app = Flask(__name__)",
+   "List of permitted methods",
+   "from flask import request",
+   "if request.method == ’GET’:",
+   "if request.method == ’POST’:",
+   "quiz_id = request.form.get('quiz')",
+   "from flask import session",
+   "time."
+  ]
+ },
+ {
+  "file": "modul-06/m06p08-wrapping-up.pdf",
+  "tech": [
+   "List the main stages of creating the \"Quiz\" web application.",
+   "databases for a long time.",
+   "SQLite is a great tool for working with databases in a small"
+  ]
+ },
+ {
+  "file": "modul-07/m07p01-my-career-in-it-part-1.pdf",
+  "tech": [
+   "Pygame",
+   "PyQt",
+   "Pandas"
+  ]
+ },
+ {
+  "file": "modul-07/m07p02-my-career-in-it-part-2.pdf",
+  "tech": [
+   "This point requires an answer to the question: \"How realistic is it that the"
+  ]
+ }
+]

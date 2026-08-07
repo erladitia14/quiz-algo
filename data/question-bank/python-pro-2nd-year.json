@@ -1,0 +1,334 @@
+{
+  "course": "python-pro-2nd-year",
+  "questions": [
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Review. Algorithms and data structures",
+      "difficulty": "easy",
+      "question": "Menurut materi review, dictionary didefinisikan sebagai...",
+      "options": [
+        "Himpunan pasangan kunci-nilai yang tidak berurutan",
+        "Struktur penyimpanan berurutan berupa daftar",
+        "Elemen data yang memiliki nama",
+        "Kumpulan angka acak"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: A dictionary is an unordered set of key-value pairs."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Review. Functions and OOP",
+      "difficulty": "medium",
+      "question": "Pada materi review fungsi, apa yang dihasilkan oleh print(print('World of Code'))?",
+      "options": [
+        "Mencetak 'World of Code' lalu mencetak None",
+        "Error program",
+        "Mencetak 'World of Code' dua kali",
+        "Mencetak angka 2"
+      ],
+      "correct_index": 0,
+      "explanation": "print() menampilkan teks tetapi mengembalikan None, sehingga print di luar mencetak None."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Review. Functions and OOP",
+      "difficulty": "medium",
+      "question": "Pada proyek daftar harga layanan, nama layanan dan harganya paling cocok disimpan dalam...",
+      "options": ["dictionary", "satu variabel string", "boolean", "list kosong"],
+      "correct_index": 0,
+      "explanation": "Materi: We will be using a dictionary to store the services' names and prices."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Review. Functions and OOP",
+      "difficulty": "easy",
+      "question": "Bentuk umum definisi fungsi dengan parameter adalah...",
+      "options": [
+        "def function_name(parameter1, parameter2, ...):",
+        "function function_name(parameter1):",
+        "func name(parameter1):",
+        "define function_name(parameter1)"
+      ],
+      "correct_index": 0,
+      "explanation": "Python memakai def diikuti nama fungsi dan daftar parameter dalam kurung."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Introduction to mobile development",
+      "difficulty": "easy",
+      "question": "Library Python yang dipakai pada materi pengembangan aplikasi mobile adalah...",
+      "options": ["Kivy", "Pygame", "Matplotlib", "Requests"],
+      "correct_index": 0,
+      "explanation": "Materi membahas langkah pembuatan aplikasi mobile dengan sintaks Kivy."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "From prototype to MVP",
+      "difficulty": "medium",
+      "question": "Menurut materi, exceptions (eksepsi) adalah...",
+      "options": [
+        "Error yang terdeteksi saat program sedang berjalan",
+        "Komentar di dalam kode",
+        "Variabel yang belum dipakai",
+        "Nama file yang salah"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: Exceptions are the errors detected during the program execution."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "From prototype to MVP",
+      "difficulty": "medium",
+      "question": "Konstruksi untuk mencegah program berhenti mendadak saat terjadi error input adalah...",
+      "options": [
+        "try: ... except:",
+        "if: ... else:",
+        "for: ... in:",
+        "def: ... return:"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: To prevent the program from interrupting when an exception occurs, we use the try-except construct."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "From prototype to MVP",
+      "difficulty": "medium",
+      "question": "Apa yang terjadi saat menjalankan x = int(\"6.1\")?",
+      "options": [
+        "Terjadi error (ValueError)",
+        "x menjadi 6.1",
+        "x menjadi 6",
+        "x menjadi string"
+      ],
+      "correct_index": 0,
+      "explanation": "int() tidak bisa mengonversi string berisi titik desimal langsung — inilah contoh exception di materi."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Visualization and testing",
+      "difficulty": "medium",
+      "question": "Pada materi visualisasi Kivy, warna dalam format RGBA untuk hitam adalah...",
+      "options": [
+        "black = (0, 0, 0, 1)",
+        "black = (255, 255, 255, 1)",
+        "black = (1, 1, 1, 0)",
+        "black = (0, 0, 0, 0)"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi menunjukkan RGBA: black = (0, 0, 0, 1)."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Visualization and testing",
+      "difficulty": "medium",
+      "question": "Untuk mengubah warna latar belakang jendela Kivy, materi menggunakan...",
+      "options": [
+        "Window.clearcolor = pink",
+        "window.background(pink)",
+        "set_color(pink)",
+        "Window.paint(pink)"
+      ],
+      "correct_index": 0,
+      "explanation": "Window.clearcolor dari kivy.core.window mengatur warna background aplikasi."
+    },
+    {
+      "module_ref": "Modul 3",
+      "lesson_ref": "Data analysis. The basics of working with Pandas",
+      "difficulty": "easy",
+      "question": "Library Python untuk analisis data yang dipakai pada modul Data Analysis adalah...",
+      "options": ["Pandas", "Pygame", "Turtle", "Kivy"],
+      "correct_index": 0,
+      "explanation": "Modul Data Analysis membahas dasar bekerja dengan library Pandas."
+    },
+    {
+      "module_ref": "Modul 3",
+      "lesson_ref": "Data cleaning. Feature engineering",
+      "difficulty": "medium",
+      "question": "Pada materi pengelompokan data, menghitung rata-rata Rating per Content Rating dilakukan dengan...",
+      "options": [
+        "df.groupby(by='Content Rating')['Rating'].mean()",
+        "df.average('Rating')",
+        "df.mean('Content Rating')",
+        "df.sort('Rating')"
+      ],
+      "correct_index": 0,
+      "explanation": "groupby mengelompokkan data per kategori lalu mean() menghitung rata-rata kolom Rating."
+    },
+    {
+      "module_ref": "Modul 3",
+      "lesson_ref": "Data cleaning. Feature engineering",
+      "difficulty": "hard",
+      "question": "Untuk menyaring hanya aplikasi berbayar (Type == 'Paid') lalu membuat tabel pivot, materi memakai...",
+      "options": [
+        "df[df['Type'] == 'Paid'].pivot_table(...)",
+        "df.filter('Paid').pivot()",
+        "df.pivot('Paid')",
+        "df['Paid'].table()"
+      ],
+      "correct_index": 0,
+      "explanation": "df[df['Type'] == 'Paid'] memfilter baris, lalu pivot_table membuat tabel ringkasan."
+    },
+    {
+      "module_ref": "Modul 4",
+      "lesson_ref": "Strategy and tactics for training models",
+      "difficulty": "medium",
+      "question": "Pada materi analisis data pelanggan, membaca file CSV ke DataFrame dilakukan dengan...",
+      "options": [
+        "df = pd.read_csv('data.csv')",
+        "df = pd.open_csv('data.csv')",
+        "df = csv.load('data.csv')",
+        "df = pd.get('data.csv')"
+      ],
+      "correct_index": 0,
+      "explanation": "pd.read_csv() adalah fungsi standar Pandas untuk membaca file CSV."
+    },
+    {
+      "module_ref": "Modul 4",
+      "lesson_ref": "Project presentations",
+      "difficulty": "medium",
+      "question": "Pada materi persiapan model, kategori teks (misal jenis kelamin) diubah menjadi angka 0 dan 1 menggunakan...",
+      "options": [
+        "Dummy variables (0 dan 1)",
+        "String panjang",
+        "Daftar nama",
+        "File terpisah"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi menyarankan: Use dummy variables (0 and 1) untuk variabel kategorikal."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "Loading a map. Working with text files",
+      "difficulty": "medium",
+      "question": "Pada materi game 3D Panda 3D, kelas untuk mengelola peta/blok adalah...",
+      "options": ["Mapmanager", "Gameloop", "Window", "Sprite"],
+      "correct_index": 0,
+      "explanation": "Materi menunjukkan class Mapmanager dengan metode __init__ dan addBlock."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "Loading a map. Working with text files",
+      "difficulty": "medium",
+      "question": "Untuk membaca file baris demi baris pada materi peta game, digunakan...",
+      "options": [
+        "for string in file: (setelah with open)",
+        "file.all()",
+        "read.every_line()",
+        "loop file.end()"
+      ],
+      "correct_index": 0,
+      "explanation": "Iterasi langsung pada objek file (for string in file:) membaca file baris per baris."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "Controlling the player",
+      "difficulty": "medium",
+      "question": "Pada materi kontrol pemain Panda 3D, kelas pemain didefinisikan terpisah dalam file...",
+      "options": ["hero.py", "map.py", "main.py saja", "player.txt"],
+      "correct_index": 0,
+      "explanation": "Materi: a separate Hero class in the hero.py file."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "Main game mode",
+      "difficulty": "medium",
+      "question": "Untuk mengikat tombol keyboard ke aksi gerak pemain di Panda 3D, materi memakai...",
+      "options": [
+        "base.accept('s' + '-repeat', self.back)",
+        "keyboard.on('s')",
+        "press('s')",
+        "input.listen('s')"
+      ],
+      "correct_index": 0,
+      "explanation": "base.accept() mendaftarkan handler untuk event tombol; '-repeat' agar aksi berulang selama ditahan."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "Working with the map",
+      "difficulty": "hard",
+      "question": "Pada materi penyimpanan peta, menyimpan objek Python ke file biner dilakukan dengan...",
+      "options": [
+        "pickle.dump(shoplist, f) dengan mode 'wb'",
+        "json.dump dengan mode 'wb'",
+        "f.write(pickle)",
+        "save(shoplist)"
+      ],
+      "correct_index": 0,
+      "explanation": "Modul pickle menyimpan objek ke file biner: buka 'wb' lalu pickle.dump(objek, f)."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "Working with the map",
+      "difficulty": "medium",
+      "question": "Memuat kembali objek dari file biner pada materi penyimpanan peta menggunakan...",
+      "options": [
+        "storedlist = pickle.load(f) dengan mode 'rb'",
+        "storedlist = f.read()",
+        "storedlist = pickle.get(f)",
+        "storedlist = load(f)"
+      ],
+      "correct_index": 0,
+      "explanation": "pickle.load(f) membaca objek dari file yang dibuka mode 'rb' (read binary)."
+    },
+    {
+      "module_ref": "Modul 6",
+      "lesson_ref": "Web page formatting",
+      "difficulty": "easy",
+      "question": "Pada materi format halaman web, tag HTML untuk membuat teks lebih kecil adalah...",
+      "options": ["<small>", "<tiny>", "<mini>", "<short>"],
+      "correct_index": 0,
+      "explanation": "Materi: adding the <small> tag makes the text smaller."
+    },
+    {
+      "module_ref": "Modul 6",
+      "lesson_ref": "Data acquisition and processing",
+      "difficulty": "medium",
+      "question": "Pada materi aplikasi web Flask, mengambil data dari session dilakukan dengan mengimpor...",
+      "options": [
+        "from flask import session",
+        "from flask import cookies",
+        "import session from web",
+        "from flask import memory"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: from flask import session — connecting the session object."
+    },
+    {
+      "module_ref": "Modul 6",
+      "lesson_ref": "Templates",
+      "difficulty": "medium",
+      "question": "Untuk membuat aplikasi Flask, materi memakai baris...",
+      "options": [
+        "app = Flask(__name__)",
+        "app = create_app()",
+        "app = WebApp()",
+        "flask.start()"
+      ],
+      "correct_index": 0,
+      "explanation": "app = Flask(__name__) membuat instance aplikasi Flask."
+    },
+    {
+      "module_ref": "Modul 6",
+      "lesson_ref": "Templates",
+      "difficulty": "medium",
+      "question": "Untuk mengambil nilai input 'quiz' dari form POST pada materi template Flask, digunakan...",
+      "options": [
+        "quiz_id = request.form.get('quiz')",
+        "quiz_id = form('quiz')",
+        "quiz_id = post.quiz()",
+        "quiz_id = request.get('quiz')"
+      ],
+      "correct_index": 0,
+      "explanation": "request.form.get('quiz') mengambil data form yang dikirim lewat POST."
+    },
+    {
+      "module_ref": "Modul 6",
+      "lesson_ref": "Wrapping up",
+      "difficulty": "easy",
+      "question": "Menurut materi wrap-up, tool database yang cocok untuk aplikasi web kecil adalah...",
+      "options": ["SQLite", "Oracle", "MongoDB", "Redis"],
+      "correct_index": 0,
+      "explanation": "Materi: SQLite is a great tool for working with databases in a small application."
+    }
+  ]
+}

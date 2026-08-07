@@ -1,0 +1,278 @@
+[
+ {
+  "file": "modul-01/m01p01-linear-algorithm.pdf",
+  "tech": []
+ },
+ {
+  "file": "modul-01/m01p02-loops.pdf",
+  "tech": [
+   "Repeat the name",
+   "an algorithm that repeats"
+  ]
+ },
+ {
+  "file": "modul-01/m01p03-initial-placement.pdf",
+  "tech": [
+   "are algorithms that repeat"
+  ]
+ },
+ {
+  "file": "modul-01/m01p04-events.pdf",
+  "tech": []
+ },
+ {
+  "file": "modul-01/m01p05-project-personal-website.pdf",
+  "tech": []
+ },
+ {
+  "file": "modul-02/m02p01-coordinates.pdf",
+  "tech": []
+ },
+ {
+  "file": "modul-02/m02p02-pointing-in-different-directions.pdf",
+  "tech": []
+ },
+ {
+  "file": "modul-02/m02p03-turns-and-degrees.pdf",
+  "tech": []
+ },
+ {
+  "file": "modul-02/m02p04-messages.pdf",
+  "tech": [
+   "position for a sprite in a"
+  ]
+ },
+ {
+  "file": "modul-02/m02p05-project-animation.pdf",
+  "tech": []
+ },
+ {
+  "file": "modul-03/m03p01-conditions-and-selection-operator.pdf",
+  "tech": [
+   "“repeat __ times” loop."
+  ]
+ },
+ {
+  "file": "modul-03/m03p02-changing-coordinates.pdf",
+  "tech": [
+   "What are our class rules?"
+  ]
+ },
+ {
+  "file": "modul-03/m03p03-procedures.pdf",
+  "tech": [
+   "if you give it the following command:"
+  ]
+ },
+ {
+  "file": "modul-03/m03p04-game-planning.pdf",
+  "tech": []
+ },
+ {
+  "file": "modul-03/m03p05-game-testing.pdf",
+  "tech": []
+ },
+ {
+  "file": "modul-03/m03p06-game-presentation.pdf",
+  "tech": []
+ },
+ {
+  "file": "modul-04/m04p01-logical-operators-and-or-not.pdf",
+  "tech": [
+   "Condition = Statement"
+  ]
+ },
+ {
+  "file": "modul-04/m04p02-conditional-loop.pdf",
+  "tech": [
+   "“repeat … times”",
+   "repeat … times",
+   "“repeat forever”",
+   "repeat forever"
+  ]
+ },
+ {
+  "file": "modul-04/m04p03-random-numbers-and-ranges.pdf",
+  "tech": []
+ },
+ {
+  "file": "modul-04/m04p04-coordinate-areas.pdf",
+  "tech": [
+   "tightly, marked them, and left. While he was walking, some local liars",
+   "this box, we will know for sure what is in there. After that, it",
+   "not (A and B) = (not A) or (not",
+   "2. How would the answer change if both answered:",
+   "3. How would the answer change if both answered:"
+  ]
+ },
+ {
+  "file": "modul-04/m04p05-group-project.pdf",
+  "tech": []
+ },
+ {
+  "file": "modul-04/m04p06-group-project-modifications-and-presentation.pdf",
+  "tech": []
+ },
+ {
+  "file": "modul-05/m05p01-variables-in-loops.pdf",
+  "tech": [
+   "Variables",
+   "Module 5. Variables",
+   "Variables as",
+   "variables in Scratch;",
+   "variables.",
+   "Variable",
+   "in the Name variable",
+   "Name variable",
+   "The Name of the variable must reﬂect its content and type."
+  ]
+ },
+ {
+  "file": "modul-05/m05p02-data-types-and-operators.pdf",
+  "tech": [
+   "What is a variable?",
+   "What are variables for?",
+   "“Variables in loops”",
+   "G = 0",
+   "K = 0",
+   "G = 30",
+   "K + 100 = 100",
+   "G - 10 = 20",
+   "K + 100 = 200",
+   "G - 10 = 10",
+   "G + 1 = 1",
+   "G = 40",
+   "K + 100 = 300",
+   "G - 10 = 30",
+   "K + 100 = 400 K + 100 = 500",
+   "G + 1 = 2",
+   "K + 100 = 600",
+   "K + 100 = 700",
+   "K + 100 = 800",
+   "G = 1",
+   "K = 200",
+   "Gas stations = 2",
+   "Kilometers = 800",
+   "Gas = 10",
+   "Task 3. Enter the value of the variable",
+   "be written in a variable;",
+   "to variables;",
+   "different types of variables.",
+   "Variable types",
+   "written in variables?"
+  ]
+ },
+ {
+  "file": "modul-05/m05p03-variables-in-games.pdf",
+  "tech": [
+   "Variables in games",
+   "What is a variable?",
+   "learn how to change variables",
+   "●Variables in games.",
+   "Scratch. Variables in games",
+   "A variable in a game",
+   "●Create a variable with a suitable name.",
+   "●Program a condition - a situation when the variable"
+  ]
+ },
+ {
+  "file": "modul-05/m05p04-variables-as-parameters.pdf",
+  "tech": [
+   "Variables as",
+   "What is a variable?",
+   "event using a variable?",
+   "scoring can we use variables?",
+   "we use variables.",
+   "Task 8. In what stage will the program be when the variables’",
+   "“Martian variables”"
+  ]
+ },
+ {
+  "file": "modul-05/m05p05-the-chatbot-project.pdf",
+  "tech": []
+ },
+ {
+  "file": "modul-05/m05p06-finalizing-and-presenting-our-projects.pdf",
+  "tech": []
+ },
+ {
+  "file": "modul-06/m06p01-classes-and-objects.pdf",
+  "tech": [
+   "Clones. Classes and",
+   "What is a variable?",
+   "to an “Age” variable?",
+   "When can we use a variable as a",
+   "clones;",
+   "●how clones inherit parameters",
+   "●what scripts clones and factories",
+   "●why we need to delete clones.",
+   "Clones inherit the following",
+   "the primary sprite or one clone?",
+   "the primary sprite and all the clones?",
+   "given after the “when I start as a clone”",
+   "A sprite that creates clones is",
+   "Factories can create clones",
+   "A class is a way of describing lots of",
+   "class share common characteristics",
+   "the same way clones of a snowﬂake"
+  ]
+ },
+ {
+  "file": "modul-06/m06p02-local-and-global-variables.pdf",
+  "tech": [
+   "Local and global variables",
+   "What is a clone?",
+   "Give an example of a class and a",
+   "class object",
+   "What properties does a clone",
+   "Clone properties",
+   "The clone inherits the position, costume, and graphical",
+   "The clone inherits all the scripts, but the \"when green ﬂag",
+   "clicked\" event does not occur for the clone.",
+   "Events that occur before the creation of the clone do not",
+   "The parent sprite executes all the scripts except \"when I start",
+   "as a clone.\"",
+   "The sprite that creates clones is called a factory.",
+   "Unused clones should be deleted since the number of",
+   "clones is limited.",
+   "and global variables;",
+   "HOW do we set a variable so",
+   "clone?",
+   "The value of the              variable changes every time for all the",
+   "sprites when a new clone is created."
+  ]
+ },
+ {
+  "file": "modul-06/m06p04-creating-the-mirrors-game.pdf",
+  "tech": [
+   "When the How to Play button is clicked, a"
+  ]
+ },
+ {
+  "file": "modul-06/m06p05-completing-the-mirrors-game.pdf",
+  "tech": [
+   "clones for and why?",
+   "The crystal hides when the checkbox is clicked.",
+   "To count the rays, create a variable",
+   "of the variable be",
+   "The variable can be",
+   "Rays variable is equal to 0",
+   "variable change?",
+   "variable increases by 1…"
+  ]
+ },
+ {
+  "file": "modul-07/m07p01-preparing-for-the-final-project.pdf",
+  "tech": []
+ },
+ {
+  "file": "modul-07/m07p02-completion-of-the-final-project.pdf",
+  "tech": []
+ },
+ {
+  "file": "modul-07/m07p03-graduation-visual-programming.pdf",
+  "tech": [
+   "I am ready to return to Earth."
+  ]
+ }
+]

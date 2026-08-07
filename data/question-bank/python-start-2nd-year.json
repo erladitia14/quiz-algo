@@ -1,0 +1,478 @@
+{
+  "course": "python-start-2nd-year",
+  "questions": [
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Review. Exception handling",
+      "difficulty": "easy",
+      "question": "Berapa hasil evaluasi ekspresi 0 <= 10 dalam Python?",
+      "options": ["True", "False", "Error", "0"],
+      "correct_index": 0,
+      "explanation": "0 memang kurang dari atau sama dengan 10, jadi ekspresi boolean menghasilkan True."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Review. Exception handling",
+      "difficulty": "easy",
+      "question": "Ekspresi name != 'John' akan menghasilkan True ketika nilai name adalah...",
+      "options": ["'John'", "'Anna'", "Tidak pernah True", "Selalu True"],
+      "correct_index": 1,
+      "explanation": "!= berarti 'tidak sama dengan'. Jika name berisi 'Anna', maka 'Anna' != 'John' bernilai True."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Review. Lists",
+      "difficulty": "medium",
+      "question": "Pada materi penghitung nilai kelas, instruksi amount_five += 1 setara dengan...",
+      "options": [
+        "amount_five = amount_five + 1",
+        "amount_five = 1",
+        "amount_five = amount_five * 1",
+        "amount_five = amount_five - 1"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi menyatakan a += 1 setara dengan a = a + 1 — menambah nilai variabel dengan 1."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Review. Lists",
+      "difficulty": "medium",
+      "question": "Pada program nilai kelas, input dihentikan saat pengguna memasukkan 0. Konstruksi yang tepat adalah...",
+      "options": [
+        "while mark != 0:",
+        "if mark == 0:",
+        "for mark in 0:",
+        "break tanpa loop"
+      ],
+      "correct_index": 0,
+      "explanation": "while mark != 0 mengulang input nilai selama nilai bukan 0 (0 = berhenti)."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Review. Lists",
+      "difficulty": "medium",
+      "question": "Kualitas pengetahuan (knowledge) pada materi nilai kelas dihitung dengan rumus...",
+      "options": [
+        "(jumlah nilai 5 dan 4) / banyak nilai * 100",
+        "jumlah nilai 5 * banyak nilai",
+        "banyak nilai / jumlah semua nilai",
+        "rata-rata semua nilai * 10"
+      ],
+      "correct_index": 0,
+      "explanation": "knowledge = (amount_five + amount_four) / len(marks) * 100 — persentase nilai baik."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Dictionaries",
+      "difficulty": "medium",
+      "question": "Pada materi katalog perpustakaan, data buku disimpan sebagai pasangan judul -> lokasi rak. Struktur data yang paling tepat adalah...",
+      "options": ["dictionary", "satu variabel string", "bilangan bulat", "boolean"],
+      "correct_index": 0,
+      "explanation": "Dictionary menyimpan pasangan kunci-nilai, misalnya books = {'Enchanted Lake': 'row 10 shelf 3'}."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Dictionaries",
+      "difficulty": "medium",
+      "question": "Diketahui books = {'poem': 'Romeo and Juliet'}. Bagaimana mengambil nilai dengan kunci 'poem'?",
+      "options": [
+        "books['poem']",
+        "books(0)",
+        "books.poem()",
+        "books[1]"
+      ],
+      "correct_index": 0,
+      "explanation": "Item dictionary diakses dengan kurung siku berisi kunci: books['poem'] menghasilkan 'Romeo and Juliet'."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Dictionaries",
+      "difficulty": "easy",
+      "question": "Pada materi perpustakaan, judul input diubah ke huruf kecil dengan title.lower() supaya...",
+      "options": [
+        "Pencarian tidak terpengaruh besar/kecil huruf",
+        "Judul dihapus dari memori",
+        "Judul diterjemahkan",
+        "Program menjadi lebih lambat"
+      ],
+      "correct_index": 0,
+      "explanation": "lower() menyeragamkan huruf sehingga 'LITTLE LONGNOSE' dan 'little longnose' tetap cocok."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Nested data structures",
+      "difficulty": "medium",
+      "question": "Pada materi data karyawan (staff), portfolio berisi daftar situs web. Contoh struktur bersarang yang benar adalah...",
+      "options": [
+        "Dictionary yang berisi list sebagai nilai",
+        "String di dalam string saja",
+        "Boolean di dalam boolean",
+        "Angka di dalam angka"
+      ],
+      "correct_index": 0,
+      "explanation": "staff = {'портфолио': ['Сайт Долголетие', 'Сайт PlayForever']} — dictionary berisi list."
+    },
+    {
+      "module_ref": "Modul 1",
+      "lesson_ref": "Nested data structures",
+      "difficulty": "easy",
+      "question": "Dictionary didefinisikan dalam materi sebagai...",
+      "options": [
+        "Himpunan pasangan kunci-nilai yang tidak berurutan",
+        "Daftar berurutan yang hanya berisi angka",
+        "Kumpulan karakter dalam satu string",
+        "Bilangan yang bisa berubah sendiri"
+      ],
+      "correct_index": 0,
+      "explanation": "Definisi materi: Dictionary is an unordered set of key-value pairs."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Classes. Introduction to PyQt",
+      "difficulty": "medium",
+      "question": "Pada materi pengenalan PyQt, kita mereview objek turtle t1 = Turtle(); t1.name = 'Leonardo'. Nama (name) dalam objek adalah contoh...",
+      "options": [
+        "Properti/atribut objek (variabel di dalam objek)",
+        "Metode objek",
+        "Modul Python",
+        "Tipe data list"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi menyebut properti sebagai variabel di dalam objek — name adalah properti objek t1."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Interface design",
+      "difficulty": "medium",
+      "question": "Pada materi desain antarmuka 'pemenang undian', kode membuat window dan widget. Baris yang membuat tombol adalah...",
+      "options": [
+        "button = QPushButton('Generate')",
+        "button = QLabel('Generate')",
+        "button = QVBoxLayout('Generate')",
+        "button = QApplication('Generate')"
+      ],
+      "correct_index": 0,
+      "explanation": "QPushButton membuat tombol; QLabel untuk teks, QVBoxLayout untuk layout, QApplication untuk aplikasi."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Interface design",
+      "difficulty": "medium",
+      "question": "Agar widget berada di tengah jendela pada materi undian, digunakan...",
+      "options": [
+        "line.addWidget(text, alignment = Qt.AlignCenter)",
+        "text.center()",
+        "Qt.Middle(text)",
+        "alignment = 'center'"
+      ],
+      "correct_index": 0,
+      "explanation": "addWidget dengan parameter alignment = Qt.AlignCenter memposisikan widget di tengah."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Memory Card Application. Part 1",
+      "difficulty": "easy",
+      "question": "Widget PyQt untuk membuat pilihan jawaban berbentuk radio button (satu pilihan) adalah...",
+      "options": ["QRadioButton", "QLabel", "QApplication", "QVBoxLayout"],
+      "correct_index": 0,
+      "explanation": "QRadioButton dipakai di Memory Card untuk opsi jawaban yang hanya boleh dipilih satu."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Memory Card Application. Part 2",
+      "difficulty": "medium",
+      "question": "Pada Memory Card Part 2, kelompok opsi jawaban dibungkus dalam kotak berjudul 'Options' menggunakan...",
+      "options": [
+        "RadioGroupBox = QGroupBox('Options')",
+        "RadioGroupBox = QLabel('Options')",
+        "RadioGroupBox = QPushButton('Options')",
+        "RadioGroupBox = QVBoxLayout('Options')"
+      ],
+      "correct_index": 0,
+      "explanation": "QGroupBox membuat kotak pengelompok widget dengan judul — dipakai untuk membungkus radio button."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Memory Card Application. Part 3",
+      "difficulty": "medium",
+      "question": "Diketahui results = [181, 176, 160, 178]. Cara mengambil hasil terbaik (elemen pertama) adalah...",
+      "options": [
+        "results[0]",
+        "results[1]",
+        "results[-10]",
+        "results.first()"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi menunjukkan print('Best result:', results[0]) — indeks 0 adalah elemen pertama."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Memory Card Application. Part 4",
+      "difficulty": "medium",
+      "question": "Pada Memory Card Part 4, soal dipilih acak dari daftar questions_list. Kode yang benar adalah...",
+      "options": [
+        "cur_question = randint(0, len(questions_list) - 1)",
+        "cur_question = randint(0, len(questions_list))",
+        "cur_question = len(questions_list)",
+        "cur_question = questions_list.random()"
+      ],
+      "correct_index": 0,
+      "explanation": "Indeks valid adalah 0 sampai len-1, jadi randint(0, len(questions_list) - 1) sesuai materi."
+    },
+    {
+      "module_ref": "Modul 2",
+      "lesson_ref": "Memory Card Application. Part 4",
+      "difficulty": "medium",
+      "question": "Pada fungsi check_answer() Memory Card, skor bertambah jika jawaban benar. Kode yang sesuai materi adalah...",
+      "options": [
+        "if answers[0].isChecked(): window.score += 1",
+        "if answers[0] == True: score - 1",
+        "window.score = 0",
+        "answers[0].checked()"
+      ],
+      "correct_index": 0,
+      "explanation": "isChecked() memeriksa radio button yang dipilih; jika benar, window.score += 1."
+    },
+    {
+      "module_ref": "Modul 3",
+      "lesson_ref": "Basics of working with files",
+      "difficulty": "easy",
+      "question": "Mode open() untuk membaca file tanpa mengubah isinya adalah...",
+      "options": ["'r' (read)", "'w' (write)", "'a' (append)", "'x' (exclusive)"],
+      "correct_index": 0,
+      "explanation": "open(\"notes.txt\", \"r\") membuka file untuk membaca; 'w' menulis ulang, 'a' menambah."
+    },
+    {
+      "module_ref": "Modul 3",
+      "lesson_ref": "Basics of working with files",
+      "difficulty": "medium",
+      "question": "Mode 'w' pada open(\"notes.txt\", \"w\") akan...",
+      "options": [
+        "Menulis ke file (menimpa isi lama)",
+        "Hanya membaca file",
+        "Menghapus file",
+        "Membuka file tanpa izin"
+      ],
+      "correct_index": 0,
+      "explanation": "'w' membuka file untuk menulis; jika file sudah ada, isinya ditimpa."
+    },
+    {
+      "module_ref": "Modul 3",
+      "lesson_ref": "Basics of working with files",
+      "difficulty": "medium",
+      "question": "Cara yang direkomendasikan materi untuk membuka file lalu membaca isinya adalah...",
+      "options": [
+        "with open(\"poem.txt\", \"r\", encoding = \"utf-8\") as file: data = file.read()",
+        "file = read(\"poem.txt\")",
+        "data = open.read(\"poem.txt\")",
+        "print(\"poem.txt\")"
+      ],
+      "correct_index": 0,
+      "explanation": "Konstruksi with open(...) as file menjamin file ditutup otomatis setelah dibaca."
+    },
+    {
+      "module_ref": "Modul 3",
+      "lesson_ref": "The Smart Notes application. Part 2",
+      "difficulty": "medium",
+      "question": "Pada Smart Notes Part 2, data catatan disimpan/dibaca dari file JSON. Fungsi membaca JSON ke dictionary adalah...",
+      "options": [
+        "data = json.load(file)",
+        "data = json.write(file)",
+        "data = file.json()",
+        "data = json.parse(file)"
+      ],
+      "correct_index": 0,
+      "explanation": "json.load(file) membaca isi file JSON menjadi dictionary Python; json.dump untuk menulis."
+    },
+    {
+      "module_ref": "Modul 4",
+      "lesson_ref": "Basics of image processing",
+      "difficulty": "easy",
+      "question": "Pada materi pemrosesan citra, kita memprogram kelas sendiri untuk mengedit foto. Nama kelasnya adalah...",
+      "options": ["ImageProcessor / ImageEditor", "PhotoDatabase", "FileReader", "WebServer"],
+      "correct_index": 0,
+      "explanation": "Materi meminta memprogram kelas ImageProcessor/ImageEditor untuk operasi edit foto."
+    },
+    {
+      "module_ref": "Modul 4",
+      "lesson_ref": "The Easy Editor app. Part 2",
+      "difficulty": "medium",
+      "question": "Untuk mendapatkan daftar nama file dalam sebuah folder pada Easy Editor, digunakan...",
+      "options": [
+        "files = os.listdir(<folder>)",
+        "files = file.names()",
+        "files = list.files()",
+        "files = dir.read()"
+      ],
+      "correct_index": 0,
+      "explanation": "os.listdir() dari modul os mengembalikan daftar nama file/folder dalam direktori."
+    },
+    {
+      "module_ref": "Modul 4",
+      "lesson_ref": "The Easy Editor app. Part 3",
+      "difficulty": "medium",
+      "question": "Pada Easy Editor Part 3 (PIL), mengubah gambar menjadi hitam-putih (grayscale) menggunakan...",
+      "options": [
+        "pic_gray = original.convert('L')",
+        "pic_gray = original.blackwhite()",
+        "pic_gray = original.gray()",
+        "pic_gray = original.filter('BW')"
+      ],
+      "correct_index": 0,
+      "explanation": "convert('L') mengonversi gambar ke mode grayscale (L = luminance)."
+    },
+    {
+      "module_ref": "Modul 4",
+      "lesson_ref": "The Easy Editor app. Part 3",
+      "difficulty": "medium",
+      "question": "Efek blur pada gambar di Easy Editor dibuat dengan...",
+      "options": [
+        "pic_blured = original.filter(ImageFilter.BLUR)",
+        "pic_blured = original.blur()",
+        "pic_blured = original.soften()",
+        "pic_blured = Image.blur(original)"
+      ],
+      "correct_index": 0,
+      "explanation": "filter(ImageFilter.BLUR) menerapkan filter blur bawaan PIL."
+    },
+    {
+      "module_ref": "Modul 4",
+      "lesson_ref": "The Easy Editor app. Part 3",
+      "difficulty": "medium",
+      "question": "Membalik gambar secara horizontal (mirror kiri-kanan) pada Easy Editor menggunakan...",
+      "options": [
+        "original.transpose(Image.FLIP_LEFT_RIGHT)",
+        "original.mirror()",
+        "original.flip('h')",
+        "original.reverse()"
+      ],
+      "correct_index": 0,
+      "explanation": "transpose(Image.FLIP_LEFT_RIGHT) mencerminkan gambar secara horizontal; ROTATE_90 memutar 90 derajat."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "Basics of game creation",
+      "difficulty": "easy",
+      "question": "Dalam Pygame, titik asal koordinat (0,0) berada di...",
+      "options": [
+        "Sudut kiri atas jendela",
+        "Sudut kanan bawah",
+        "Tengah layar",
+        "Sudut kiri bawah"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi menyatakan: In PyGame, the origin is located in the upper left corner of the window."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "Basics of game creation",
+      "difficulty": "medium",
+      "question": "Membuat jendela game berukuran 700x500 piksel di Pygame dilakukan dengan...",
+      "options": [
+        "window = display.set_mode((700, 500))",
+        "window = create.window(700, 500)",
+        "window = screen(700, 500)",
+        "window = pygame.window[700, 500]"
+      ],
+      "correct_index": 0,
+      "explanation": "display.set_mode((700, 500)) membuat jendela game dengan ukuran tersebut."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "Basics of game creation",
+      "difficulty": "medium",
+      "question": "events = event.get() pada game loop Pygame berfungsi untuk...",
+      "options": [
+        "Mengambil daftar kejadian (klik, tombol, tutup jendela)",
+        "Menghapus semua gambar",
+        "Menutup program paksa",
+        "Membuat sprite baru"
+      ],
+      "correct_index": 0,
+      "explanation": "event.get() mengembalikan daftar event yang terjadi — dasar interaksi game."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "The Maze game. Part 2",
+      "difficulty": "medium",
+      "question": "Pada game Maze, kelas Wall (dinding) dibuat dengan mewarisi kelas bawaan Pygame yaitu...",
+      "options": ["Sprite", "Window", "Display", "Surface"],
+      "correct_index": 0,
+      "explanation": "Materi: Let's program the Wall class to inherit from Sprite — pewarisan dari kelas Sprite."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "The Maze game. Part 3",
+      "difficulty": "medium",
+      "question": "Pada Maze Part 3, variabel finish digunakan untuk...",
+      "options": [
+        "Menandai pemain mencapai garis akhir (menang)",
+        "Menghitung jumlah musuh",
+        "Menghapus background",
+        "Menyimpan skor tertinggi"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: If finish = True, the user has won — flag untuk kondisi menang."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "The 'Shooter' game. Part 1",
+      "difficulty": "easy",
+      "question": "Pada spesifikasi awal game Shooter, jumlah musuh di layar adalah...",
+      "options": ["6 musuh", "1 musuh", "20 musuh", "Tidak ada musuh"],
+      "correct_index": 0,
+      "explanation": "Materi Part 1: there are 6 enemies on the screen at any given time."
+    },
+    {
+      "module_ref": "Modul 5",
+      "lesson_ref": "The 'Shooter' game. Part 3",
+      "difficulty": "medium",
+      "question": "Pada Shooter Part 3, kelas peluru (Bullet) dibuat sebagai...",
+      "options": [
+        "Kelas anak (child) dari kelas Sprite",
+        "Kelas yang berdiri sendiri tanpa pewarisan",
+        "Fungsi biasa",
+        "Variabel global"
+      ],
+      "correct_index": 0,
+      "explanation": "Materi: a Bullet class that is a child class of the Sprite class."
+    },
+    {
+      "module_ref": "Modul 6",
+      "lesson_ref": "Review. Introduction to Git",
+      "difficulty": "easy",
+      "question": "Pada materi Git dan publikasi, menyimpan perubahan kode ke repository disebut...",
+      "options": ["commit", "pull", "clone", "merge"],
+      "correct_index": 0,
+      "explanation": "Commit menyimpan snapshot perubahan kode ke riwayat repository Git."
+    },
+    {
+      "module_ref": "Modul 6",
+      "lesson_ref": "The 'Ping-Pong' game. Part 2",
+      "difficulty": "medium",
+      "question": "Pada Ping-Pong Part 2, bola bergerak dengan speed_x = 3. Cara memperbarui posisi bola adalah...",
+      "options": [
+        "ball.rect.x += speed_x",
+        "ball.x = 3",
+        "speed_x + ball",
+        "ball.move(3)"
+      ],
+      "correct_index": 0,
+      "explanation": "Setiap frame posisi ditambah kecepatan: ball.rect.x += speed_x."
+    },
+    {
+      "module_ref": "Modul 6",
+      "lesson_ref": "The 'Ping-Pong' game. Part 2",
+      "difficulty": "medium",
+      "question": "Ketika bola Ping-Pong memantul dari dinding atas/bawah, yang dilakukan pada kecepatan vertikal adalah...",
+      "options": [
+        "speed_y *= -1 (membalik arah)",
+        "speed_y = 0",
+        "speed_y += 1",
+        "speed_y dihapus"
+      ],
+      "correct_index": 0,
+      "explanation": "Mengalikan dengan -1 membalik arah gerak — inilah efek memantul sesuai materi."
+    }
+  ]
+}
