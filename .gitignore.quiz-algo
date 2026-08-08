@@ -1,0 +1,6 @@
+DATABASE_URL
+node_modules/
+.next/
+out/
+.env.local
+.env*.local

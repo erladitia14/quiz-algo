@@ -1,0 +1,37 @@
+{
+  "name": "quiz-algo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Platform quiz pre-test & post-test untuk course Python dan Visual Programming Algonova (PostgreSQL version)",
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start -p 3001",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.563.0",
+    "next": "^16.1.6",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "@vercel/postgres": "^0.10.0",
+    "drizzle-orm": "^0.44.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^25.2.3",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.4",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.1.6",
+    "prettier": "^3.8.1",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3",
+    "drizzle-kit": "^0.35.0"
+  }
+}
