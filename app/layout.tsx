@@ -3,9 +3,22 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ops Edu Quiz — Pre-Test & Post-Test",
+  title: "Quiz-Algo — Interactive Learning Platform",
   description:
-    "Platform quiz pre-test dan post-test untuk course Python & Visual Programming Algonova",
+    "Platform quiz interaktif untuk course Python & Visual Programming Algonova — pre-test & post-test dengan adaptive quiz, real-time scoring, dan admin dashboard.",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+  },
+  openGraph: {
+    title: "Quiz-Algo — Interactive Learning Platform",
+    description:
+      "Platform quiz interaktif untuk course Python & Visual Programming Algonova dengan adaptive quiz dan real-time scoring.",
+    url: "https://quiz-algo.erladitia.me",
+    siteName: "Quiz-Algo",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -22,7 +35,7 @@ export default function RootLayout({
               <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-sky-500 text-sm font-bold text-slate-950">
                 Q
               </span>
-              Ops Edu Quiz
+              Quiz-Algo
             </Link>
             <nav className="flex items-center gap-1 text-sm">
               <Link
@@ -48,7 +61,7 @@ export default function RootLayout({
         </header>
         <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6">{children}</main>
         <footer className="border-t border-white/[0.06] py-6 text-center text-xs text-slate-500">
-          Ops Edu Quiz · Materi soal bersumber dari kurikulum LMS Algonova
+          Quiz-Algo · Materi soal bersumber dari kurikulum LMS Algonova
         </footer>
       </body>
     </html>
