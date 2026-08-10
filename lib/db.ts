@@ -5,7 +5,8 @@
  * options sebagai JSON string, flag 0/1 sebagai integer) supaya data lama
  * bisa dimigrasikan 1:1 dan logika aplikasi tidak perlu berubah.
  */
-import { Pool, PoolClient } from "pg";
+import { Pool } from "pg";
+import type { PoolClient } from "pg";
 
 let pool: Pool | null = null;
 
