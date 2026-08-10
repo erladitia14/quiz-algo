@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
-import { getDb, getCourse, recordAttempt } from "@/lib/db";
+import {
+  getAttemptScore,
+  getCourse,
+  getQuestionForGrading,
+  recordAttempt,
+} from "@/lib/db";
 
 type SubmittedAnswer = { questionId?: number; selectedIndex?: number };
 
@@ -19,7 +24,7 @@ export async function POST(request: Request) {
     const startedAt = body.startedAt || new Date().toISOString();
     const answers = Array.isArray(body.answers) ? body.answers : [];
 
-    if (!getCourse(courseSlug)) {
+    if (!(await getCourse(courseSlug))) {
       return NextResponse.json(
         { ok: false, message: "Course tidak ditemukan." },
         { status: 404 },
@@ -39,11 +44,6 @@ export async function POST(request: Request) {
     }
 
     // Validasi jawaban terhadap bank soal di server — tidak percaya client.
-    const db = getDb();
-    const getQuestion = db.prepare(
-      "SELECT id, correct_index, explanation FROM questions WHERE id = ? AND course_slug = ?",
-    );
-
     const graded: Array<{
       id: number;
       selectedIndex: number;
@@ -52,9 +52,7 @@ export async function POST(request: Request) {
     for (const answer of answers) {
       const questionId = Number(answer.questionId);
       const selectedIndex = Number(answer.selectedIndex);
-      const question = getQuestion.get(questionId, courseSlug) as
-        | { id: number; correct_index: number; explanation: string }
-        | undefined;
+      const question = await getQuestionForGrading(questionId, courseSlug);
       if (!question) {
         return NextResponse.json(
           { ok: false, message: `Soal ${questionId} tidak valid.` },
@@ -68,7 +66,7 @@ export async function POST(request: Request) {
       });
     }
 
-    const attemptId = recordAttempt({
+    const attemptId = await recordAttempt({
       studentName,
       courseSlug,
       quizType,
@@ -76,15 +74,13 @@ export async function POST(request: Request) {
       startedAt,
     });
 
-    const attempt = db
-      .prepare("SELECT * FROM quiz_attempts WHERE id = ?")
-      .get(attemptId) as { score: number; correct_count: number };
+    const attempt = await getAttemptScore(attemptId);
 
     return NextResponse.json({
       ok: true,
       attemptId,
-      score: attempt.score,
-      correctCount: attempt.correct_count,
+      score: attempt?.score ?? 0,
+      correctCount: attempt?.correct_count ?? 0,
       totalQuestions: graded.length,
     });
   } catch (error) {

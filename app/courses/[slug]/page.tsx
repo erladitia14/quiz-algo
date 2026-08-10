@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
+  countQuestions,
   getCourse,
   getSettings,
   listLessons,
-  pickRandomQuestions,
 } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
@@ -21,12 +21,12 @@ export default async function CourseDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const course = getCourse(slug);
+  const course = await getCourse(slug);
   if (!course) notFound();
 
-  const lessons = listLessons(slug);
-  const settings = getSettings();
-  const availableQuestions = pickRandomQuestions(slug, 9999).length;
+  const lessons = await listLessons(slug);
+  const settings = await getSettings();
+  const availableQuestions = await countQuestions(slug);
 
   const modules: ModuleGroup[] = [];
   for (const lesson of lessons) {

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getDb } from "@/lib/db";
+import { deleteQuestion, getQuestion, updateQuestion } from "@/lib/db";
 
 export async function PUT(
   request: Request,
@@ -8,10 +8,7 @@ export async function PUT(
   try {
     const { id } = await params;
     const questionId = parseInt(id, 10);
-    const db = getDb();
-    const existing = db
-      .prepare("SELECT * FROM questions WHERE id = ?")
-      .get(questionId);
+    const existing = await getQuestion(questionId);
     if (!existing) {
       return NextResponse.json(
         { ok: false, message: "Soal tidak ditemukan." },
@@ -55,28 +52,16 @@ export async function PUT(
       );
     }
 
-    db.prepare(
-      `UPDATE questions SET
-        question = COALESCE(?, question),
-        options = COALESCE(?, options),
-        correct_index = COALESCE(?, correct_index),
-        explanation = COALESCE(?, explanation),
-        difficulty = COALESCE(?, difficulty),
-        module_ref = COALESCE(?, module_ref),
-        lesson_ref = COALESCE(?, lesson_ref),
-        active = COALESCE(?, active)
-       WHERE id = ?`,
-    ).run(
-      body.question?.trim() || null,
-      options ? JSON.stringify(options) : null,
-      correct_index === undefined ? null : correct_index,
-      body.explanation !== undefined ? body.explanation : null,
-      body.difficulty || null,
-      body.module_ref !== undefined ? body.module_ref : null,
-      body.lesson_ref !== undefined ? body.lesson_ref : null,
-      body.active === undefined ? null : body.active,
-      questionId,
-    );
+    await updateQuestion(questionId, {
+      question: body.question?.trim() || null,
+      options: options || null,
+      correct_index: correct_index === undefined ? null : correct_index,
+      explanation: body.explanation !== undefined ? body.explanation : null,
+      difficulty: body.difficulty || null,
+      module_ref: body.module_ref !== undefined ? body.module_ref : null,
+      lesson_ref: body.lesson_ref !== undefined ? body.lesson_ref : null,
+      active: body.active === undefined ? null : body.active,
+    });
 
     return NextResponse.json({ ok: true });
   } catch (error) {
@@ -93,9 +78,8 @@ export async function DELETE(
   try {
     const { id } = await params;
     const questionId = parseInt(id, 10);
-    const db = getDb();
-    const result = db.prepare("DELETE FROM questions WHERE id = ?").run(questionId);
-    if (result.changes === 0) {
+    const deleted = await deleteQuestion(questionId);
+    if (!deleted) {
       return NextResponse.json(
         { ok: false, message: "Soal tidak ditemukan." },
         { status: 404 },

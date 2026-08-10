@@ -1,44 +1,16 @@
 import Link from "next/link";
 import {
   getCourseStats,
-  getDb,
   getSettings,
+  listStudentsWithStats,
 } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
-export default function AdminPage() {
-  const stats = getCourseStats() as Array<{
-    slug: string;
-    title: string;
-    questions: number;
-    pre_attempts: number;
-    pre_avg: number | null;
-    post_attempts: number;
-    post_avg: number | null;
-  }>;
-  const settings = getSettings();
-
-  const students = getDb()
-    .prepare(
-      `SELECT s.id, s.name, s.email,
-              COUNT(a.id) AS attempts,
-              ROUND(AVG(CASE WHEN a.quiz_type='pre' THEN a.score END)) AS pre_avg,
-              ROUND(AVG(CASE WHEN a.quiz_type='post' THEN a.score END)) AS post_avg
-       FROM students s
-       LEFT JOIN quiz_attempts a ON a.student_id = s.id
-       GROUP BY s.id
-       ORDER BY attempts DESC, s.name
-       LIMIT 100`,
-    )
-    .all() as Array<{
-    id: number;
-    name: string;
-    email: string;
-    attempts: number;
-    pre_avg: number | null;
-    post_avg: number | null;
-  }>;
+export default async function AdminPage() {
+  const stats = await getCourseStats();
+  const settings = await getSettings();
+  const students = await listStudentsWithStats();
 
   const totalQuestions = stats.reduce((sum, s) => sum + s.questions, 0);
 

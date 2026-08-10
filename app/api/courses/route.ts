@@ -4,7 +4,7 @@ import { listCourses } from "@/lib/db";
 export const dynamic = "force-dynamic";
 
 export async function GET() {
-  const courses = listCourses();
+  const courses = await listCourses();
   return NextResponse.json({
     ok: true,
     courses: courses.map((c) => ({

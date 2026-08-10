@@ -10,10 +10,10 @@ export default async function ResultPage({
   params: Promise<{ attemptId: string }>;
 }) {
   const { attemptId } = await params;
-  const attempt = getAttempt(parseInt(attemptId, 10));
+  const attempt = await getAttempt(parseInt(attemptId, 10));
   if (!attempt) notFound();
 
-  const answers = getAttemptAnswers(attempt.id);
+  const answers = await getAttemptAnswers(attempt.id);
   const threshold = 70;
   const passed = attempt.score >= threshold;
 

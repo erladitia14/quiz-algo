@@ -10,7 +10,7 @@ export async function POST(request: Request) {
     const courseSlug = body.courseSlug || "";
     const type = body.type === "post" ? "post" : "pre";
 
-    const course = getCourse(courseSlug);
+    const course = await getCourse(courseSlug);
     if (!course) {
       return NextResponse.json(
         { ok: false, message: "Course tidak ditemukan." },
@@ -18,12 +18,12 @@ export async function POST(request: Request) {
       );
     }
 
-    const settings = getSettings();
+    const settings = await getSettings();
     const count = Math.max(
       1,
       parseInt(settings.quiz_question_count || "10", 10) || 10,
     );
-    const questions = pickRandomQuestions(courseSlug, count);
+    const questions = await pickRandomQuestions(courseSlug, count);
     if (questions.length === 0) {
       return NextResponse.json(
         { ok: false, message: "Bank soal untuk course ini masih kosong." },

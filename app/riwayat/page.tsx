@@ -3,9 +3,9 @@ import { listAttempts, listCourses } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
-export default function HistoryPage() {
-  const attempts = listAttempts();
-  const courses = listCourses();
+export default async function HistoryPage() {
+  const attempts = await listAttempts();
+  const courses = await listCourses();
   const titleBySlug = Object.fromEntries(
     courses.map((c) => [c.slug, c.title]),
   );

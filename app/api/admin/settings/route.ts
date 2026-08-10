@@ -4,7 +4,7 @@ import { getSettings, setSetting } from "@/lib/db";
 export const dynamic = "force-dynamic";
 
 export async function GET() {
-  return NextResponse.json({ ok: true, settings: getSettings() });
+  return NextResponse.json({ ok: true, settings: await getSettings() });
 }
 
 export async function POST(request: Request) {
@@ -24,10 +24,10 @@ export async function POST(request: Request) {
             { status: 400 },
           );
         }
-        setSetting(key, value);
+        await setSetting(key, value);
       }
     }
-    return NextResponse.json({ ok: true, settings: getSettings() });
+    return NextResponse.json({ ok: true, settings: await getSettings() });
   } catch (error) {
     const message =
       error instanceof Error ? error.message : "Gagal menyimpan pengaturan.";

@@ -3,17 +3,9 @@ import { getCourseStats, getSettings } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
-export default function CoursesPage() {
-  const stats = getCourseStats() as Array<{
-    slug: string;
-    title: string;
-    questions: number;
-    pre_attempts: number;
-    pre_avg: number | null;
-    post_attempts: number;
-    post_avg: number | null;
-  }>;
-  const settings = getSettings();
+export default async function CoursesPage() {
+  const stats = await getCourseStats();
+  const settings = await getSettings();
 
   return (
     <div className="flex flex-col gap-6">
