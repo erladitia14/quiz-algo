@@ -1,39 +1,53 @@
 import { NextResponse } from "next/server";
-import { getCourse, getSettings, pickRandomQuestions } from "@/lib/db";
+import {
+  getLesson,
+  getSettings,
+  pickQuestionsForLesson,
+} from "@/lib/db";
 
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as {
-      courseSlug?: string;
+      lessonId?: number;
       type?: string;
     };
-    const courseSlug = body.courseSlug || "";
+    const lessonId = Number(body.lessonId);
     const type = body.type === "post" ? "post" : "pre";
 
-    const course = await getCourse(courseSlug);
-    if (!course) {
+    if (!Number.isInteger(lessonId) || lessonId <= 0) {
       return NextResponse.json(
-        { ok: false, message: "Course tidak ditemukan." },
+        { ok: false, message: "Lesson tidak valid." },
+        { status: 400 },
+      );
+    }
+
+    const lesson = await getLesson(lessonId);
+    if (!lesson) {
+      return NextResponse.json(
+        { ok: false, message: "Lesson tidak ditemukan." },
         { status: 404 },
       );
     }
 
     const settings = await getSettings();
-    const count = Math.max(
-      1,
-      parseInt(settings.quiz_question_count || "10", 10) || 10,
-    );
-    const questions = await pickRandomQuestions(courseSlug, count);
+    const questions = await pickQuestionsForLesson(lessonId);
     if (questions.length === 0) {
       return NextResponse.json(
-        { ok: false, message: "Bank soal untuk course ini masih kosong." },
+        { ok: false, message: "Bank soal untuk lesson ini masih kosong." },
         { status: 400 },
       );
     }
 
     return NextResponse.json({
       ok: true,
-      course: { slug: course.slug, title: course.title },
+      course: { slug: lesson.course_slug },
+      lesson: {
+        id: lesson.id,
+        lesson_number: lesson.lesson_number,
+        title: lesson.title,
+        module_label: lesson.module_label,
+        module_name: lesson.module_name,
+      },
       type,
       passThreshold: parseInt(settings.quiz_pass_threshold || "70", 10),
       timerMinutes:
@@ -44,8 +58,6 @@ export async function POST(request: Request) {
         id: q.id,
         question: q.question,
         options: q.options,
-        module_ref: q.module_ref,
-        lesson_ref: q.lesson_ref,
       })),
     });
   } catch (error) {

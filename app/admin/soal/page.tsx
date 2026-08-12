@@ -6,6 +6,7 @@ import Link from "next/link";
 type QuestionRow = {
   id: number;
   course_slug: string;
+  lesson_id: number | null;
   lesson_ref: string;
   module_ref: string;
   question: string;
@@ -16,7 +17,15 @@ type QuestionRow = {
   active: number;
 };
 
-type CourseOption = { slug: string; title: string };
+type CourseOption = { slug: string; title: string; lessons?: Lesson[] };
+
+type Lesson = {
+  id: number;
+  lesson_number: number;
+  title: string;
+  module_label: string;
+  module_name: string;
+};
 
 export default function AdminQuestionsPage() {
   const [courses, setCourses] = useState<CourseOption[]>([]);
@@ -27,6 +36,7 @@ export default function AdminQuestionsPage() {
 
   const [form, setForm] = useState({
     course_slug: "",
+    lesson_id: "",
     question: "",
     optionA: "",
     optionB: "",
@@ -42,13 +52,14 @@ export default function AdminQuestionsPage() {
 
   const loadCourses = useCallback(async () => {
     try {
-      const response = await fetch("/api/courses");
+      const response = await fetch("/api/courses?includeLessons=1");
       const payload = await response.json();
       if (payload.ok) {
         setCourses(
-          payload.courses.map((c: { slug: string; title: string }) => ({
+          (payload.courses as any[]).map((c) => ({
             slug: c.slug,
             title: c.title,
+            lessons: c.lessons || [],
           })),
         );
       }
@@ -78,6 +89,23 @@ export default function AdminQuestionsPage() {
     void loadQuestions();
   }, [loadQuestions]);
 
+  // Auto-fill lesson_ref & module_ref when lesson selected
+  const selectedLesson = useMemo(() => {
+    if (!form.course_slug || !form.lesson_id) return null;
+    const course = courses.find((c) => c.slug === form.course_slug);
+    return course?.lessons?.find((l) => String(l.id) === form.lesson_id) || null;
+  }, [courses, form.course_slug, form.lesson_id]);
+
+  useEffect(() => {
+    if (selectedLesson) {
+      setForm((f) => ({
+        ...f,
+        lesson_ref: selectedLesson.title,
+        module_ref: selectedLesson.module_label,
+      }));
+    }
+  }, [selectedLesson]);
+
   const addQuestion = async () => {
     setError("");
     setNotice("");
@@ -92,6 +120,10 @@ export default function AdminQuestionsPage() {
       setError("Indeks jawaban benar tidak valid untuk jumlah opsi yang diisi.");
       return;
     }
+    if (!Number.isInteger(Number(form.lesson_id)) || Number(form.lesson_id) <= 0) {
+      setError("Pilih lesson tujuan untuk soal ini.");
+      return;
+    }
     setSaving(true);
     try {
       const response = await fetch("/api/admin/questions", {
@@ -99,6 +131,7 @@ export default function AdminQuestionsPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           course_slug: form.course_slug,
+          lesson_id: Number(form.lesson_id),
           question: form.question,
           options,
           correct_index: form.correct_index,
@@ -168,6 +201,13 @@ export default function AdminQuestionsPage() {
     return map;
   }, [questions]);
 
+  const getLessonName = (courseSlug: string, lessonId: number | null) => {
+    if (!lessonId) return "-";
+    const course = courses.find((c) => c.slug === courseSlug);
+    const lesson = course?.lessons?.find((l) => l.id === lessonId);
+    return lesson ? `${lesson.lesson_number}. ${lesson.title}` : `#${lessonId}`;
+  };
+
   return (
     <div className="flex flex-col gap-8">
       <header>
@@ -178,7 +218,9 @@ export default function AdminQuestionsPage() {
           Kelola soal quiz
         </h1>
         <p className="mt-2 text-sm text-slate-400">
-          Tambah, nonaktifkan, atau hapus soal per course.{" "}
+          Tambah, nonaktifkan, atau hapus soal per course. Soal wajib ditujukan
+          ke{" "}
+          <span className="text-amber-300">satu lesson tertentu</span>.{" "}
           <Link href="/admin" className="text-sky-400 underline">
             ← Kembali ke dashboard
           </Link>
@@ -206,7 +248,13 @@ export default function AdminQuestionsPage() {
             <select
               value={form.course_slug}
               onChange={(e) =>
-                setForm((f) => ({ ...f, course_slug: e.target.value }))
+                setForm((f) => ({
+                  ...f,
+                  course_slug: e.target.value,
+                  lesson_id: "",
+                  lesson_ref: "",
+                  module_ref: "",
+                }))
               }
               className="w-full rounded-lg border border-white/[0.12] bg-[#0e1316] px-3 py-2.5 text-sm text-white"
             >
@@ -220,16 +268,29 @@ export default function AdminQuestionsPage() {
           </label>
           <label className="block">
             <span className="mb-1.5 block text-xs uppercase tracking-wider text-slate-500">
-              Modul (opsional)
+              Lesson
             </span>
-            <input
-              value={form.module_ref}
+            <select
+              value={form.lesson_id}
+              disabled={!form.course_slug}
               onChange={(e) =>
-                setForm((f) => ({ ...f, module_ref: e.target.value }))
+                setForm((f) => ({ ...f, lesson_id: e.target.value }))
               }
-              placeholder="Modul 1"
-              className="w-full rounded-lg border border-white/[0.12] bg-[#0e1316] px-3 py-2.5 text-sm text-white"
-            />
+              className="w-full rounded-lg border border-white/[0.12] bg-[#0e1316] px-3 py-2.5 text-sm text-white disabled:opacity-50"
+            >
+              <option value="">— pilih lesson —</option>
+              {(() => {
+                const course = courses.find((c) => c.slug === form.course_slug);
+                if (!course?.lessons) return null;
+                return (
+                  course.lessons.map((l) => (
+                    <option key={l.id} value={String(l.id)}>
+                      {l.lesson_number}. {l.module_label}: {l.title}
+                    </option>
+                  ))
+                );
+              })()}
+            </select>
           </label>
         </div>
         <label className="mt-4 block">
@@ -329,7 +390,7 @@ export default function AdminQuestionsPage() {
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <p className="font-mono text-[11px] text-slate-500">
-                      {q.course_slug} · {q.module_ref} · {q.lesson_ref} ·{" "}
+                      {q.course_slug} · {getLessonName(q.course_slug, q.lesson_id)} ·{" "}
                       {q.difficulty}
                     </p>
                     <p className="mt-1 text-sm font-medium text-white">

@@ -20,12 +20,14 @@ export default async function HomePage() {
           Algonova · Quiz Platform
         </p>
         <h1 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-          Pre-test &amp; post-test untuk course Python dan Visual Programming
+          Pre-test &amp; post-test untuk Python dan Visual Programming
         </h1>
         <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-400">
-          Soal disusun langsung dari materi pelajaran LMS Algonova. Kerjakan
-          pre-test sebelum mulai belajar, lalu post-test setelah semua materi
-          selesai untuk mengukur perkembanganmu.
+          Soal disusun langsung dari materi lesson LMS Algonova. Kerjakan{" "}
+          <span className="text-sky-300">pre-test</span> sebelum mempelajari
+          setiap lesson, lalu{" "}
+          <span className="text-violet-300">post-test</span> setelah selesai
+          untuk mengukur pemahamanmu.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
@@ -46,7 +48,10 @@ export default async function HomePage() {
             ["Kursus aktif", String(stats.length)],
             ["Soal tersedia", String(totalQuestions)],
             ["Quiz dikerjakan", String(totalAttempts)],
-            ["Kelulusan minimal", `${settings.quiz_pass_threshold || 70}%`],
+            [
+              "Batas kelulusan minimal",
+              `${settings.quiz_pass_threshold || 70}%`,
+            ],
           ].map(([label, value]) => (
             <div
               key={label}
@@ -66,7 +71,9 @@ export default async function HomePage() {
       <section>
         <h2 className="text-xl font-semibold text-white">Kursus tersedia</h2>
         <p className="mt-1 text-sm text-slate-400">
-          {stats.length} course dengan bank soal berbasis materi resmi.
+          {stats.length} course dengan bank soal berbasis materi resmi. Klik
+          salah satu course untuk melihat daftar lesson dan kerjakan quiz di
+          setiap lesson.
         </p>
         <div className="mt-5 grid gap-4 md:grid-cols-2">
           {stats.map((course) => (
@@ -84,14 +91,23 @@ export default async function HomePage() {
                 </span>
               </div>
               <p className="mt-3 text-xs text-slate-500">
-                Pre-test: {course.pre_attempts} percobaan
-                {course.pre_avg != null ? ` · rata-rata ${course.pre_avg}` : ""}
-                {" · "}
-                Post-test: {course.post_attempts} percobaan
-                {course.post_avg != null
-                  ? ` · rata-rata ${course.post_avg}`
-                  : ""}
+                Lesson dengan quiz: {course.lessons_with_quiz}/{course.lessons_total}
               </p>
+              <dl className="mt-2 flex items-center gap-3 text-[11px] text-slate-400">
+                <div>
+                  Pre-test:{" "}
+                  <span className="text-sky-300">
+                    {course.pre_attempts}x {course.pre_avg != null ? `(rata-rata ${course.pre_avg})` : ""}
+                  </span>
+                </div>
+                {" · "}
+                <div>
+                  Post-test:{" "}
+                  <span className="text-violet-300">
+                    {course.post_attempts}x {course.post_avg != null ? `(rata-rata ${course.post_avg})` : ""}
+                  </span>
+                </div>
+              </dl>
               <div className="mt-4 flex gap-2">
                 <span className="rounded-lg bg-sky-500/15 px-3 py-1.5 text-xs font-medium text-sky-300">
                   Pre-Test →

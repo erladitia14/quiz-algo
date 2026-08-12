@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { createQuestion, listQuestionsAdmin } from "@/lib/db";
+import { createQuestion, getLesson, listQuestionsAdmin } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
@@ -14,6 +14,7 @@ export async function POST(request: Request) {
   try {
     const body = (await request.json()) as {
       course_slug?: string;
+      lesson_id?: number;
       question?: string;
       options?: string[];
       correct_index?: number;
@@ -53,10 +54,27 @@ export async function POST(request: Request) {
       );
     }
 
+    // Quiz berjalan per lesson — soal wajib punya lesson tujuan.
+    const lessonId = Number(body.lesson_id);
+    if (!Number.isInteger(lessonId) || lessonId <= 0) {
+      return NextResponse.json(
+        { ok: false, message: "Pilih lesson tujuan untuk soal ini." },
+        { status: 400 },
+      );
+    }
+    const lesson = await getLesson(lessonId);
+    if (!lesson || lesson.course_slug !== course_slug) {
+      return NextResponse.json(
+        { ok: false, message: "Lesson tidak ditemukan pada course tersebut." },
+        { status: 400 },
+      );
+    }
+
     const id = await createQuestion({
       course_slug,
-      lesson_ref: body.lesson_ref || "",
-      module_ref: body.module_ref || "",
+      lesson_id: lessonId,
+      lesson_ref: body.lesson_ref || lesson.title,
+      module_ref: body.module_ref || lesson.module_label,
       question,
       options,
       correct_index,

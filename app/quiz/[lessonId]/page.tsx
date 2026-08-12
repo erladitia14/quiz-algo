@@ -8,12 +8,18 @@ type QuizQuestion = {
   id: number;
   question: string;
   options: string[];
-  module_ref: string;
-  lesson_ref: string;
+};
+
+type LessonData = {
+  lesson_number: number;
+  title: string;
+  module_label: string;
+  module_name: string;
 };
 
 type QuizData = {
-  course: { slug: string; title: string };
+  course: { slug: string };
+  lesson: LessonData;
   type: "pre" | "post";
   passThreshold: number;
   timerMinutes: number;
@@ -30,9 +36,9 @@ type SubmitResponse = {
 };
 
 export default function QuizPage() {
-  const params = useParams<{ slug: string }>();
+  const params = useParams<{ lessonId: string }>();
   const searchParams = useSearchParams();
-  const courseSlug = params.slug;
+  const lessonIdRaw = Number(params.lessonId);
   const quizType = searchParams.get("type") === "post" ? "post" : "pre";
 
   const [phase, setPhase] = useState<"intro" | "quiz" | "submitting" | "done">(
@@ -52,12 +58,13 @@ export default function QuizPage() {
   const [secondsLeft, setSecondsLeft] = useState<number | null>(null);
 
   const loadQuiz = useCallback(async () => {
+    if (lessonIdRaw <= 0) return;
     setLoadError("");
     try {
       const response = await fetch("/api/quiz/start", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ courseSlug, type: quizType }),
+        body: JSON.stringify({ lessonId: lessonIdRaw, type: quizType }),
       });
       const payload = (await response.json()) as QuizData & {
         ok: boolean;
@@ -75,7 +82,7 @@ export default function QuizPage() {
         error instanceof Error ? error.message : "Gagal memuat quiz.",
       );
     }
-  }, [courseSlug, quizType]);
+  }, [lessonIdRaw, quizType]);
 
   useEffect(() => {
     void loadQuiz();
@@ -113,7 +120,7 @@ export default function QuizPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          courseSlug,
+          lessonId: lessonIdRaw,
           quizType,
           studentName,
           startedAt,
@@ -135,7 +142,7 @@ export default function QuizPage() {
       );
       setPhase("quiz");
     }
-  }, [answers, courseSlug, data, nameError, phase, quizType, startedAt, studentName]);
+  }, [answers, data, nameError, phase, quizType, startedAt, studentName, lessonIdRaw]);
 
   // Auto-submit saat timer habis
   useEffect(() => {
@@ -161,13 +168,16 @@ export default function QuizPage() {
     return (
       <div className="mx-auto max-w-xl rounded-2xl border border-white/[0.08] bg-[#12181c] p-8 text-center">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500">
-          {quizType === "pre" ? "Pre-Test" : "Post-Test"} · {data.course.title}
+          {quizType === "pre" ? "Pre-Test" : "Post-Test"} ·{" "}
+          {data.lesson.module_name} · {data.lesson.title}
         </p>
         <h1 className="mt-3 text-2xl font-semibold text-white">
           {passed ? "Selamat, kamu lulus! 🎉" : "Belum mencapai batas kelulusan"}
         </h1>
         <p
-          className={`mt-6 text-6xl font-bold ${passed ? "text-emerald-400" : "text-rose-400"}`}
+          className={`mt-6 text-6xl font-bold ${
+            passed ? "text-emerald-400" : "text-rose-400"
+          }`}
         >
           {result.score}%
         </p>
@@ -183,7 +193,7 @@ export default function QuizPage() {
             Lihat pembahasan jawaban
           </Link>
           <Link
-            href={`/courses/${courseSlug}`}
+            href={`/courses/${data.course.slug}`}
             className="rounded-lg border border-white/[0.12] px-5 py-3 text-sm text-slate-300 hover:bg-white/[0.06]"
           >
             Kembali ke course
@@ -200,7 +210,7 @@ export default function QuizPage() {
           {quizType === "pre" ? "Pre-Test" : "Post-Test"}
         </p>
         <h1 className="mt-2 text-2xl font-semibold text-white">
-          {data ? data.course.title : "Memuat course..."}
+          {data ? `${data.lesson.module_name}: ${data.lesson.title}` : "Memuat lesson..."}
         </h1>
         {loadError ? (
           <div className="mt-6 rounded-lg border border-rose-400/40 bg-rose-500/10 p-4 text-sm text-rose-100">
@@ -211,7 +221,7 @@ export default function QuizPage() {
             <ul className="mt-5 space-y-2 text-sm text-slate-400">
               <li>
                 • {data ? data.questions.length : "..."} soal pilihan ganda
-                diambil acak dari bank soal materi
+                (semua soal dari lesson ini)
               </li>
               <li>• Batas kelulusan: {data ? data.passThreshold : "..."}%</li>
               {quizType === "post" && data && data.timerMinutes > 0 ? (
@@ -260,7 +270,7 @@ export default function QuizPage() {
     <div className="mx-auto max-w-3xl">
       <div className="mb-4 flex items-center justify-between text-sm">
         <p className="text-slate-400">
-          {data.course.title} · {quizType === "pre" ? "Pre-Test" : "Post-Test"}
+          {data.lesson.module_name} · {quizType === "pre" ? "Pre-Test" : "Post-Test"}
         </p>
         <div className="flex items-center gap-3">
           {timerLabel ? (
@@ -289,8 +299,9 @@ export default function QuizPage() {
 
       <div className="rounded-2xl border border-white/[0.08] bg-[#12181c] p-6 sm:p-8">
         <p className="font-mono text-xs text-slate-500">
-          {current.module_ref}
-          {current.lesson_ref ? ` · ${current.lesson_ref}` : ""}
+          {data.lesson.module_label}
+          <br />
+          {data.lesson.title}
         </p>
         <h2 className="mt-3 text-lg font-medium leading-7 text-white sm:text-xl">
           {current.question}

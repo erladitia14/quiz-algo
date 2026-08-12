@@ -10,6 +10,24 @@ export default async function HistoryPage() {
     courses.map((c) => [c.slug, c.title]),
   );
 
+  // Lookup lesson titles for attempt entries
+  const lessonsByCourse = new Map<string, Map<number, string>>();
+  for (const course of courses) {
+    // Fetch all lessons once per course
+    try {
+      const res = await fetch(`/api/courses?includeLessons=1`);
+      if (res.ok) {
+        const payload = await res.json();
+        if (payload.ok) {
+          const found = payload.courses.find((c: any) => c.slug === course.slug);
+          if (found?.lessons) {
+            lessonsByCourse.set(course.slug, new Map(found.lessons.map((l: any) => [l.id, l.title])));
+          }
+        }
+      }
+    } catch {}
+  }
+
   return (
     <div className="flex flex-col gap-6">
       <header>
@@ -42,6 +60,7 @@ export default async function HistoryPage() {
               <tr className="border-b border-white/[0.07] text-[11px] uppercase tracking-wider text-slate-500">
                 <th className="px-4 py-3 font-medium">Peserta</th>
                 <th className="px-4 py-3 font-medium">Course</th>
+                <th className="px-4 py-3 font-medium">Lesson</th>
                 <th className="px-4 py-3 font-medium">Jenis</th>
                 <th className="px-4 py-3 font-medium">Benar</th>
                 <th className="px-4 py-3 font-medium">Nilai</th>
@@ -58,6 +77,15 @@ export default async function HistoryPage() {
                   <td className="px-4 py-3 text-white">{attempt.student_name}</td>
                   <td className="px-4 py-3 text-slate-300">
                     {titleBySlug[attempt.course_slug] || attempt.course_slug}
+                  </td>
+                  <td className="px-4 py-3 text-xs text-slate-400">
+                    {attempt.lesson_title ? (
+                      <span className="truncate block max-w-[150px]" title={attempt.lesson_title}>
+                        {attempt.lesson_title}
+                      </span>
+                    ) : (
+                      "-"
+                    )}
                   </td>
                   <td className="px-4 py-3">
                     <span

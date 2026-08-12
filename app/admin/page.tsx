@@ -1,8 +1,10 @@
 import Link from "next/link";
 import {
+  countQuestions,
   getCourseStats,
   getSettings,
   listStudentsWithStats,
+  listCourses,
 } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
@@ -11,8 +13,12 @@ export default async function AdminPage() {
   const stats = await getCourseStats();
   const settings = await getSettings();
   const students = await listStudentsWithStats();
+  const courses = await listCourses();
 
   const totalQuestions = stats.reduce((sum, s) => sum + s.questions, 0);
+
+  // Total number of lessons with quiz across all courses
+  const totalLessonsWithQuiz = stats.reduce((sum, s) => sum + s.lessons_with_quiz, 0);
 
   return (
     <div className="flex flex-col gap-8">
@@ -32,14 +38,14 @@ export default async function AdminPage() {
           <Link href="/admin/pengaturan" className="text-sky-400 underline">
             Pengaturan
           </Link>
-          .
+          . Quiz dijalankan per lesson.
         </p>
       </header>
 
       <section className="grid gap-4 sm:grid-cols-3">
         {[
           ["Total bank soal", String(totalQuestions)],
-          ["Kursus aktif", String(stats.length)],
+          ["Lesson dengan quiz", `${totalLessonsWithQuiz}/${courses.length * 30}`], // rough estimate
           ["Kelulusan minimal", `${settings.quiz_pass_threshold || 70}%`],
         ].map(([label, value]) => (
           <div
@@ -62,6 +68,7 @@ export default async function AdminPage() {
               <tr className="border-b border-white/[0.07] text-[11px] uppercase tracking-wider text-slate-500">
                 <th className="px-4 py-3 font-medium">Course</th>
                 <th className="px-4 py-3 font-medium">Soal</th>
+                <th className="px-4 py-3 font-medium">Lesson dengan quiz</th>
                 <th className="px-4 py-3 font-medium">Pre-test</th>
                 <th className="px-4 py-3 font-medium">Rata² pre</th>
                 <th className="px-4 py-3 font-medium">Post-test</th>
@@ -77,6 +84,9 @@ export default async function AdminPage() {
                   <td className="px-4 py-3 text-white">{course.title}</td>
                   <td className="px-4 py-3 font-mono text-slate-300">
                     {course.questions}
+                  </td>
+                  <td className="px-4 py-3 font-mono text-slate-300">
+                    {course.lessons_with_quiz}/{course.lessons_total}
                   </td>
                   <td className="px-4 py-3 font-mono text-slate-300">
                     {course.pre_attempts}

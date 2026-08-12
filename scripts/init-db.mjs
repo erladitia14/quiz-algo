@@ -88,6 +88,7 @@ await pool.query(`
   CREATE TABLE IF NOT EXISTS questions (
     id SERIAL PRIMARY KEY,
     course_slug TEXT NOT NULL REFERENCES courses(slug) ON DELETE CASCADE,
+    lesson_id INTEGER REFERENCES lessons(id),
     lesson_ref TEXT NOT NULL DEFAULT '',
     module_ref TEXT NOT NULL DEFAULT '',
     question TEXT NOT NULL,
@@ -99,12 +100,14 @@ await pool.query(`
     created_at TEXT NOT NULL DEFAULT to_char(now() AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI:SS')
   );
   CREATE INDEX IF NOT EXISTS idx_questions_course ON questions(course_slug);
+  CREATE INDEX IF NOT EXISTS idx_questions_lesson ON questions(lesson_id);
 
   CREATE TABLE IF NOT EXISTS quiz_attempts (
     id SERIAL PRIMARY KEY,
     student_id INTEGER REFERENCES students(id) ON DELETE SET NULL,
     student_name TEXT NOT NULL,
     course_slug TEXT NOT NULL REFERENCES courses(slug) ON DELETE CASCADE,
+    lesson_id INTEGER REFERENCES lessons(id),
     quiz_type TEXT NOT NULL CHECK(quiz_type IN ('pre','post')),
     total_questions INTEGER NOT NULL,
     correct_count INTEGER NOT NULL DEFAULT 0,
@@ -113,6 +116,7 @@ await pool.query(`
     submitted_at TEXT
   );
   CREATE INDEX IF NOT EXISTS idx_attempts_course ON quiz_attempts(course_slug);
+  CREATE INDEX IF NOT EXISTS idx_attempts_lesson ON quiz_attempts(lesson_id);
   CREATE INDEX IF NOT EXISTS idx_attempts_student ON quiz_attempts(student_id);
 
   CREATE TABLE IF NOT EXISTS attempt_answers (

@@ -37,18 +37,37 @@ export default async function ResultPage({
           dikumpulkan {attempt.submitted_at}
         </p>
         <div className="mt-6 flex justify-center gap-3">
-          <Link
-            href={`/quiz/${attempt.course_slug}?type=${attempt.quiz_type}`}
-            className="rounded-lg bg-sky-500 px-4 py-2.5 text-sm font-semibold text-slate-950 hover:bg-sky-400"
-          >
-            Ulangi quiz
-          </Link>
-          <Link
-            href={`/courses/${attempt.course_slug}`}
-            className="rounded-lg border border-white/[0.12] px-4 py-2.5 text-sm text-slate-300 hover:bg-white/[0.06]"
-          >
-            Ke course
-          </Link>
+          {attempt.lesson_id ? (
+            <>
+              <Link
+                href={`/quiz/${attempt.lesson_id}?type=${attempt.quiz_type}`}
+                className="rounded-lg bg-sky-500 px-4 py-2.5 text-sm font-semibold text-slate-950 hover:bg-sky-400"
+              >
+                Ulangi quiz lesson ini
+              </Link>
+              <Link
+                href={`/courses/${attempt.course_slug}#lesson-${attempt.lesson_id}`}
+                className="rounded-lg border border-white/[0.12] px-4 py-2.5 text-sm text-slate-300 hover:bg-white/[0.06]"
+              >
+                Ke course
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link
+                href={`/quiz/${attempt.course_slug}?type=${attempt.quiz_type}`}
+                className="rounded-lg bg-sky-500 px-4 py-2.5 text-sm font-semibold text-slate-950 hover:bg-sky-400"
+              >
+                Ulangi quiz
+              </Link>
+              <Link
+                href={`/courses/${attempt.course_slug}`}
+                className="rounded-lg border border-white/[0.12] px-4 py-2.5 text-sm text-slate-300 hover:bg-white/[0.06]"
+              >
+                Ke course
+              </Link>
+            </>
+          )}
         </div>
       </header>
 
