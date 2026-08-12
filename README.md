@@ -43,6 +43,19 @@ Path DB ops-edu bisa di-override: `OPS_EDU_DB_PATH=... node scripts/sync-from-op
 | Admin: dashboard & statistik | `/admin` |
 | Admin: CRUD soal (tambah/aktif-nonaktif/hapus) | `/admin/soal` |
 | Admin: pengaturan (jumlah soal, batas lulus, timer) | `/admin/pengaturan` |
+| Admin: kelola model AI (tambah/edit/test/aktif/default/hapus) | `/admin/models` |
+| AI tutor di halaman hasil quiz (model dipilih user dari yang diaktifkan admin) | `/hasil/[attemptId]` |
+
+## Model AI (AI tutor)
+
+Model AI dikelola admin lewat `/admin/models` — tanpa perlu ubah kode:
+
+- Setiap model = nama tampilan + **Model ID** + Base URL + API key (opsional) + status aktif/default.
+- Endpoint harus **kompatibel OpenAI Chat Completions**: OpenAI, 9Router, Groq, OpenRouter, DeepSeek, dll.
+- Base URL / API key kosong → fallback env global `AI_BASE_URL` / `AI_API_KEY` (set di Vercel env / `.env.local`).
+- Tombol **Test** di tabel memverifikasi koneksi ke provider.
+- User melihat dropdown model di halaman hasil quiz (`/hasil/[attemptId]`) — isinya **otomatis mengikuti** model yang admin aktifkan. Jika belum ada model aktif, widget AI tutor disembunyikan.
+- API key tidak pernah dikirim ke client; chat di-proxy server-side (`POST /api/ai/chat`, streaming SSE) dan diberi konteks nilai + soal yang salah dari attempt peserta.
 
 ## Bank soal
 
