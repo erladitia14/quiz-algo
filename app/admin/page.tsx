@@ -33,10 +33,14 @@ export default async function AdminPage() {
           Ringkasan bank soal dan performa peserta. Kelola soal lewat{" "}
           <Link href="/admin/soal" className="text-sky-400 underline">
             Bank Soal
-          </Link>{" "}
-          dan pengaturan lewat{" "}
+          </Link>
+          , pengaturan lewat{" "}
           <Link href="/admin/pengaturan" className="text-sky-400 underline">
             Pengaturan
+          </Link>{" "}
+          dan model AI tutor lewat{" "}
+          <Link href="/admin/models" className="text-sky-400 underline">
+            Model AI
           </Link>
           . Quiz dijalankan per lesson.
         </p>

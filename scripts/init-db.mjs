@@ -132,6 +132,18 @@ await pool.query(`
     key TEXT PRIMARY KEY,
     value TEXT NOT NULL
   );
+
+  CREATE TABLE IF NOT EXISTS ai_models (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    model_id TEXT NOT NULL,
+    base_url TEXT NOT NULL DEFAULT 'https://api.openai.com/v1',
+    api_key TEXT NOT NULL DEFAULT '',
+    description TEXT NOT NULL DEFAULT '',
+    enabled INTEGER NOT NULL DEFAULT 1,
+    is_default INTEGER NOT NULL DEFAULT 0,
+    created_at TEXT NOT NULL DEFAULT to_char(now() AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI:SS')
+  );
 `);
 
 await pool.query(

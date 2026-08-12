@@ -51,6 +51,12 @@ export default function RootLayout({
                 Riwayat
               </Link>
               <Link
+                href="/admin/models"
+                className="rounded-lg px-3 py-2 text-slate-400 transition hover:bg-white/[0.06] hover:text-white"
+              >
+                Model AI
+              </Link>
+              <Link
                 href="/admin"
                 className="rounded-lg px-3 py-2 text-slate-400 transition hover:bg-white/[0.06] hover:text-white"
               >
