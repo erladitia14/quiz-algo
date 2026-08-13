@@ -38,10 +38,6 @@ export default async function AdminPage() {
           <Link href="/admin/pengaturan" className="text-sky-400 underline">
             Pengaturan
           </Link>{" "}
-          dan model AI tutor lewat{" "}
-          <Link href="/admin/models" className="text-sky-400 underline">
-            Model AI
-          </Link>
           . Quiz dijalankan per lesson.
         </p>
       </header>

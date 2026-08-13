@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAttempt, getAttemptAnswers } from "@/lib/db";
-import AiTutor from "@/components/ai-tutor";
 
 export const dynamic = "force-dynamic";
 
@@ -71,8 +70,6 @@ export default async function ResultPage({
           )}
         </div>
       </header>
-
-      <AiTutor attemptId={attempt.id} />
 
       <section>
         <h2 className="text-lg font-semibold text-white">
