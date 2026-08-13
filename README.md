@@ -1,105 +1,83 @@
-# Ops Edu Quiz Platform
+# Quiz-Algo — Interactive Learning Platform
 
-Platform quiz **pre-test & post-test** untuk course **Python** dan **Visual Programming** Algonova. Soal dibuat **berdasarkan materi resmi** (136 PDF lesson dari 4 course) yang sudah didownload dari LMS Algonova.
+Platform quiz **pre-test & post-test per lesson** untuk course **Python** dan **Visual Programming** Algonova. Soal dibuat berdasarkan materi resmi (136 lesson dari 4 course). Dilengkapi **AI tutor** yang membahas hasil quiz peserta secara personal.
 
-> Project terpisah dari `ops-edu` (C:\Users\erlan\Documents\SaaS) agar siap di-hosting sendiri.
+🌐 Live: **https://quiz-algo.erladitia.me** (Vercel + Neon PostgreSQL)
+
+> **Untuk AI agent yang mempelajari project ini:** baca [`docs/AI-ONBOARDING.md`](./docs/AI-ONBOARDING.md) dulu, lalu folder [`docs/`](./docs/).
 
 ## Stack
 
-- **Next.js 16** (App Router) + **TypeScript** + **Tailwind CSS 4**
-- **SQLite** (better-sqlite3) — file `data/quiz.db`
-- Soal di-grading di server; kunci jawaban tidak pernah dikirim ke client
+| Layer | Teknologi |
+|---|---|
+| Framework | Next.js 16 (App Router, Turbopack) + React 19 + TypeScript |
+| Styling | Tailwind CSS 4 (dark theme, tanpa design tokens terpusat) |
+| Database | PostgreSQL di **Neon** (serverless, region Singapore) via `pg` pool |
+| AI | Provider apa pun yang kompatibel OpenAI Chat Completions (streaming SSE) |
+| Hosting | Vercel (git-push auto-deploy dari `main`) |
+
+Keamanan inti: **grading dilakukan 100% di server** — `correct_index` dan `explanation` tidak pernah dikirim ke client saat quiz berlangsung; API key model AI tidak pernah keluar dari server.
 
 ## Menjalankan
 
 ```bash
 npm install
-npm run dev        # http://localhost:3001
+npm run dev          # http://localhost:3001
+npm run build        # production build (harus hijau sebelum push)
+npm run typecheck    # tsc --noEmit
 ```
 
-Port 3001 supaya bisa jalan bareng ops-edu (port 3000).
-
-### Setup database (dari nol)
-
-```bash
-node scripts/init-db.mjs          # buat tabel
-node scripts/sync-from-ops-edu.mjs # sync course+lesson dari ops-edu DB
-node scripts/seed-questions.mjs   # seed 128 soal dari question-bank
-```
-
-Path DB ops-edu bisa di-override: `OPS_EDU_DB_PATH=... node scripts/sync-from-ops-edu.mjs`
+Wajib punya `.env.local` berisi `DATABASE_URL` (connection string Neon, pakai pooler). Detail di [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md).
 
 ## Fitur
 
 | Fitur | Lokasi |
 |---|---|
-| Landing + statistik | `/` |
+| Landing + statistik global | `/` |
 | Daftar course | `/courses` |
-| Detail course + silabus | `/courses/[slug]` |
-| Quiz pre-test (tanpa timer) | `/quiz/[slug]?type=pre` |
-| Quiz post-test (timer 20 menit, auto-submit) | `/quiz/[slug]?type=post` |
-| Hasil + pembahasan per soal | `/hasil/[attemptId]` |
-| Riwayat semua percobaan | `/riwayat` |
+| Detail course + silabus + tombol quiz per lesson | `/courses/[slug]` |
+| Quiz per lesson — pre-test (tanpa timer) | `/quiz/[lessonId]?type=pre` |
+| Quiz per lesson — post-test (timer + auto-submit) | `/quiz/[lessonId]?type=post` |
+| Hasil + pembahasan + **AI tutor** | `/hasil/[attemptId]` |
+| Riwayat semua percobaan (kolom lesson) | `/riwayat` |
 | Admin: dashboard & statistik | `/admin` |
-| Admin: CRUD soal (tambah/aktif-nonaktif/hapus) | `/admin/soal` |
-| Admin: pengaturan (jumlah soal, batas lulus, timer) | `/admin/pengaturan` |
-| Admin: kelola model AI (tambah/edit/test/aktif/default/hapus) | `/admin/models` |
-| AI tutor di halaman hasil quiz (model dipilih user dari yang diaktifkan admin) | `/hasil/[attemptId]` |
+| Admin: CRUD soal (wajib pilih lesson tujuan) | `/admin/soal` |
+| Admin: pengaturan (batas lulus, timer) | `/admin/pengaturan` |
+| Admin: kelola model AI (CRUD + test koneksi) | `/admin/models` |
 
-## Model AI (AI tutor)
+## Bank soal (per Agustus 2026)
 
-Model AI dikelola admin lewat `/admin/models` — tanpa perlu ubah kode:
+- **702 soal aktif** tersebar di **136 lesson** (semua lesson ≥ 5 soal)
+- Distribusi difficulty: ~50% easy, ~50% medium, sedikit hard
+- 4 course: Python Start 1st Year, Python Start 2nd Year, Python Pro 2nd Year, Visual Programming
+- Soal asli (128) tersimpan di `data/question-bank/*.json`; soal hasil generate ada langsung di database (via `scripts/generate-all-questions.mjs`)
 
-- Setiap model = nama tampilan + **Model ID** + Base URL + API key (opsional) + status aktif/default.
-- Endpoint harus **kompatibel OpenAI Chat Completions**: OpenAI, 9Router, Groq, OpenRouter, DeepSeek, dll.
-- Base URL / API key kosong → fallback env global `AI_BASE_URL` / `AI_API_KEY` (set di Vercel env / `.env.local`).
-- Tombol **Test** di tabel memverifikasi koneksi ke provider.
-- User melihat dropdown model di halaman hasil quiz (`/hasil/[attemptId]`) — isinya **otomatis mengikuti** model yang admin aktifkan. Jika belum ada model aktif, widget AI tutor disembunyikan.
-- API key tidak pernah dikirim ke client; chat di-proxy server-side (`POST /api/ai/chat`, streaming SSE) dan diberi konteks nilai + soal yang salah dari attempt peserta.
+## Aturan quiz (default, bisa diubah di `/admin/pengaturan`)
 
-## Bank soal
-
-| Course | Soal | Sumber materi |
-|---|---|---|
-| Python Start 1st Year | 30 | modul 1-7 (basics s/d Pygame & hackathon) |
-| Python Start 2nd Year | 37 | modul 1-7 (PyQt, file, PIL, Pygame, Git) |
-| Python Pro 2nd Year | 26 | modul 1-7 (Kivy, Pandas, ML, Panda3D, Flask) |
-| Visual Programming | 35 | modul 1-7 (Scratch: koordinat s/d clone) |
-
-Soal disimpan di `data/question-bank/*.json` (versioned, bisa di-review) lalu di-seed ke DB.
-
-## Aturan quiz (default, bisa diubah di /admin/pengaturan)
-
-- 10 soal acak per percobaan
+- **Quiz berjalan per lesson** — semua soal aktif lesson itu tampil (urutan diacak), bukan acak per course
 - Batas kelulusan 70%
 - Pre-test: tanpa timer, bebas diulang
-- Post-test: timer 20 menit, auto-submit saat habis
+- Post-test: timer 20 menit (default), auto-submit saat habis
 
-## Alur data
+## Dokumentasi lengkap
+
+| File | Isi |
+|---|---|
+| [docs/AI-ONBOARDING.md](./docs/AI-ONBOARDING.md) | Konteks utama untuk AI agent: aturan, konvensi, resep tugas |
+| [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) | Arsitektur sistem, alur data, peta file |
+| [docs/DATABASE.md](./docs/DATABASE.md) | Skema lengkap semua tabel + relasi |
+| [docs/API.md](./docs/API.md) | Referensi semua API route (request/response) |
+| [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md) | Setup Vercel + Neon, env vars, urutan script |
+| [docs/DECISIONS.md](./docs/DECISIONS.md) | Riwayat project & keputusan desain (ADR) |
+
+## Alur pipeline soal
 
 ```
-materials/*.pdf (ops-edu) 
-  → scripts/extract-materials.py  (data/material-texts)
-  → penulisan soal berbasis materi  (data/question-bank)
-  → scripts/seed-questions.mjs    (data/quiz.db: questions)
-  → quiz flow: start → jawab → submit (grading server-side) → hasil + pembahasan
+materials/*.pdf (LMS Algonova, via ops-edu)
+  → scripts/extract-materials.py        (data/material-texts)
+  → scripts/make-digest.py / make-tech-digest.py  (data/material-digest, material-tech)
+  → penulisan soal berbasis materi       (data/question-bank/*.json — 128 soal asli)
+  → scripts/seed-questions.mjs          (DB: questions)
+  → scripts/generate-all-questions.mjs  (menambah soal hingga tiap lesson ≥ 5)
+  → quiz flow: start → jawab → submit (grading server-side) → hasil + pembahasan + AI tutor
 ```
-
-## Deployment
-
-1. Upload project ke hosting (Vercel tidak cocok untuk SQLite file-based; pilihan: VPS + `npm run build && npm start`, atau Railway/Render dengan volume untuk `data/`).
-2. Jalankan `init-db` + `sync-from-ops-edu` + `seed-questions` sekali di server.
-3. Set port: `next start -p <port>` (script `start` sudah pakai 3001).
-
-## Black-box testing (2026-08-07) — semua lulus
-
-- 13 halaman: 200 semua; course tidak ada → 404; hasil tidak ada → 404
-- Quiz start pre/post: 10 soal acak, threshold 70, timer post 20 menit
-- Quiz start course palsu → ditolak
-- Submit: grading benar (7/10 → 70%), divalidasi server-side
-- Submit tanpa nama / soal palsu → ditolak
-- CRUD soal admin: tambah → update → hapus → hapus lagi (404)
-- Settings: ubah threshold → restore → nilai non-angka ditolak
-- Security: correct_index/explanation TIDAK bocor ke client
-- Randomisasi: set soal berbeda tiap percobaan
-- Production build: sukses
